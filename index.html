@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Balaji Ganapathy - Global C-level executive with 25+ years building purposeful organizations and advancing inclusive growth across 55 countries.">
+    <meta name="keywords" content="Balaji Ganapathy, social impact executive, CSR leader, ESG strategy, corporate philanthropy, inclusive growth, purpose-driven leadership">
+    <meta name="author" content="Balaji Ganapathy">
+    <meta property="og:title" content="Balaji Ganapathy | Purpose is the New Tech">
+    <meta property="og:description" content="C-Level Executive | Advisor | Speaker | Coach - Architecting Inclusive Growth at Scale">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://balajiganapathy.com">
+    <meta name="theme-color" content="#001935">
+    
+    <title>Balaji Ganapathy | Purpose is the New Tech</title>
+    
+    <style>
+        /* ========================================
+           RESET & BASE STYLES
+           ======================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            /* Light Mode Colors */
+            --primary: #001935;
+            --primary-light: #0A2E5C;
+            --accent-teal: #00D8BE;
+            --accent-coral: #FF6B6B;
+            --accent-orange: #FFA500;
+            --accent-yellow: #FFD700;
+            --text-dark: #1A1A1A;
+            --text-light: #FFFFFF;
+            --bg-light: #FFFFFF;
+            --bg-gray: #F8F9FA;
+            --border-color: #E5E5E5;
+            
+            /* Dark Mode Colors */
+            --dm-bg: #0F0F0F;
+            --dm-card: #1A1A1A;
+            --dm-text: #E5E5E5;
+            --dm-border: #333333;
+            
+            /* Transition timing */
+            --transition-speed: 0.3s;
+            --transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Helvetica', 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            transition: background-color var(--transition-speed) var(--transition-timing),
+                        color var(--transition-speed) var(--transition-timing);
+            overflow-x: hidden;
+        }
+        
+        body.dark-mode {
+            background-color: var(--dm-bg);
+            color: var(--dm-text);
+        }
+        
+        /* ========================================
+           HEADER & NAVIGATION
+           ======================================== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: all var(--transition-speed) var(--transition-timing);
+        }
+        
+        body.dark-mode header {
+            background: rgba(15, 15, 15, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .profile-thumb {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent-teal);
+            transition: transform var(--transition-speed) var(--transition-timing);
+        }
+        
+        .profile-thumb:hover {
+            transform: scale(1.1);
+        }
+        
+        .logo-text {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            transition: color var(--transition-speed) var(--transition-timing);
+        }
+        
+        body.dark-mode .logo-text {
+            color: var(--accent-teal);
+        }
+        
+        .nav-right {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .persona-nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .persona-link {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all var(--transition-speed) var(--transition-timing);
+            position: relative;
+            cursor: pointer;
+        }
+        
+        body.dark-mode .persona-link {
+            color: var(--dm-text);
+        }
+        
+        .persona-link:hover {
+            background: var(--accent-teal);
+            color: var(--text-light);
+            transform: translateY(-2px);
+        }
+        
+        .persona-link.active {
+            background: var(--accent-teal);
+            color: var(--text-light);
+        }
+        
+        .persona-link:focus {
+            outline: 2px solid var(--accent-teal);
+            outline-offset: 2px;
+        }
+        
+        .dark-mode-toggle {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all var(--transition-speed) var(--transition-timing);
+        }
+        
+        body.dark-mode .dark-mode-toggle {
+            border-color: var(--accent-teal);
+            color: var(--accent-teal);
+        }
+        
+        .dark-mode-toggle:hover,
+        .dark-mode-toggle:focus {
+            background: var(--accent-teal);
+            color: var(--text-light);
+            border-color: var(--accent-teal);
+            transform: scale(1.05);
+        }
+        
+        .dark-mode-toggle:focus {
+            outline: 2px solid var(--accent-teal);
+            outline-offset: 2px;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-dark);
+            padding: 0.5rem;
+        }
+        
+        body.dark-mode .mobile-menu-btn {
+            color: var(--dm-text);
+        }
+        
+        .mobile-menu-btn:focus {
+            outline: 2px solid var(--accent-teal);
+            outline-offset: 2px;
+        }
+        
+        /* ========================================
+           MAIN CONTAINER & PERSONA SECTIONS
+           ======================================== */
+        main {
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .persona-container {
+            display: flex;
+            transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+            width: 400%;
+        }
+        
+        .persona-section {
+            min-width: 25%;
+            width: 25%;
+            padding: 3rem 2rem;
+            min-height: calc(100vh - 80px);
+        }
+        
+        .persona-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        /* ========================================
+           HERO SECTION
+           ======================================== */
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--text-light);
+            border-radius: 12px;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+            transform: translateZ(0);
+        }
+        
+        body.dark-mode .hero {
+            background: linear-gradient(135deg, #001935 0%, #00D8BE 100%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        .hero .tagline {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+            animation: fadeInUp 0.6s ease-out 0.1s both;
+        }
+        
+        .hero .subtitle {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.6s ease-out 0.2s both;
+        }
+        
+        .hero-cta {
+            display: inline-block;
+            background: var(--accent-teal);
+            color: var(--text-light);
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all var(--transition-speed) var(--transition-timing);
+            box-shadow: 0 4px 15px rgba(0, 216, 190, 0.3);
+            animation: fadeInUp 0.6s ease-out 0.3s both;
+        }
+        
+        .hero-cta:hover,
+        .hero-cta:focus {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 216, 190, 0.4);
+        }
+        
+        .hero-cta:focus {
+            outline: 2px solid white;
+            outline-offset: 2px;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* ========================================
+           CONTENT SECTIONS
+           ======================================== */
+        .content-section {
+            margin-bottom: 4rem;
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 2.2rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            text-align: center;
+        }
+        
+        body.dark-mode .section-title {
+            color: var(--accent-teal);
+        }
+        
+        .section-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+        
+        /* ========================================
+           CAROUSEL
+           ======================================== */
+        .carousel-container {
+            position: relative;
+            margin: 2rem 0;
+        }
+        
+        .carousel {
+            display: flex;
+            gap: 2rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            padding: 1rem 0;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .carousel::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .carousel::-webkit-scrollbar-track {
+            background: var(--bg-gray);
+            border-radius: 10px;
+        }
+        
+        body.dark-mode .carousel::-webkit-scrollbar-track {
+            background: var(--dm-card);
+        }
+        
+        .carousel::-webkit-scrollbar-thumb {
+            background: var(--accent-teal);
+            border-radius: 10px;
+        }
+        
+        .carousel::-webkit-scrollbar-thumb:hover {
+            background: var(--primary);
+        }
+        
+        .carousel-card {
+            min-width: 300px;
+            flex: 0 0 auto;
+            scroll-snap-align: start;
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all var(--transition-speed) var(--transition-timing);
+        }
+        
+        body.dark-mode .carousel-card {
+            background: var(--dm-card);
+            border-color: var(--dm-border);
+        }
+        
+        .carousel-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        body.dark-mode .carousel-card:hover {
+            box-shadow: 0 10px 30px rgba(0, 216, 190, 0.2);
+        }
+        
+        .metric-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-teal);
+            margin-bottom: 0.5rem;
+        }
+        
+        .metric-label {
+            font-size: 1rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+        
+        body.dark-mode .metric-label {
+            color: var(--dm-text);
+        }
+        
+        .metric-description {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+        
+        body.dark-mode .metric-description {
+            color: #999;
+        }
+        
+        /* ========================================
+           ACCORDION
+           ======================================== */
+        .accordion {
+            margin: 2rem 0;
+        }
+        
+        .accordion-item {
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all var(--transition-speed) var(--transition-timing);
+        }
+        
+        body.dark-mode .accordion-item {
+            border-color: var(--dm-border);
+        }
+        
+        .accordion-header {
+            background: var(--bg-gray);
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all var(--transition-speed) var(--transition-timing);
+        }
+        
+        body.dark-mode .accordion-header {
+            background: var(--dm-card);
+        }
+        
+        .accordion-header:hover,
+        .accordion-header:focus {
+            background: var(--accent-teal);
+            color: var(--text-light);
+        }
+        
+        .accordion-header:focus {
+            outline: 2px solid var(--accent-teal);
+            outline-offset: -2px;
+        }
+        
+        .accordion-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .accordion-icon {
+            font-size: 1.5rem;
+            transition: transform var(--transition-speed) var(--transition-timing);
+        }
+        
+        .accordion-item.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height var(--transition-speed) var(--transition-timing);
+            background: var(--bg-light);
+        }
+        
+        body.dark-mode .accordion-content {
+            background: var(--dm-bg);
+        }
+        
+        .accordion-item.active .accordion-content {
+            max-height: 500px;
+        }
+        
+        .accordion-body {
+            padding: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        /* ========================================
+           LOGO GRID
+           ======================================== */
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+            padding: 3rem;
+            background: var(--bg-gray);
+            border-radius: 12px;
+        }
+        
+        body.dark-mode .logo-grid {
+            background: var(--dm-card);
+        }
+        
+        .logo-item {
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: all var(--transition-speed) var(--transition-timing);
+        }
+        
+        body.dark-mode .logo-item {
+            color: var(--dm-text);
+        }
+        
+        .logo-item:hover {
+            transform: scale(1.05);
+            color: var(--accent-teal);
+        }
+        
+        /* ========================================
+           CONTACT MODAL
+           ======================================== */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity var(--transition-speed) var(--transition-timing);
+        }
+        
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+        
+        .modal {
+            background: var(--bg-light);
+            padding: 3rem;
+            border-radius: 12px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: scale(0.9);
+            transition: transform var(--transition-speed) var(--transition-timing);
+        }
+        
+        body.dark-mode .modal {
+            background: var(--dm-card);
+        }
+        
+        .modal-overlay.active .modal {
+            transform: scale(1);
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--text-dark);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all var(--transition-speed) var(--transition-timing);
+        }
+        
+        body.dark-mode .modal-close {
+            color: var(--dm-text);
+        }
+        
+        .modal-close:hover,
+        .modal-close:focus {
+            background: var(--accent-teal);
+            color: var(--text-light);
+        }
+        
+        .modal-close:focus {
+            outline: 2px solid var(--accent-teal);
+            outline-offset: 2px;
+        }
+        
+        .modal h2 {
+            margin-bottom: 2rem;
+            color: var(--primary);
+        }
+        
+        body.dark-mode .modal h2 {
+            color: var(--accent-teal);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all var(--transition-speed) var(--transition-timing);
+            background: var(--bg-light);
+            color: var(--text-dark);
+        }
+        
+        body.dark-mode .form-group input,
+        body.dark-mode .form-group textarea {
+            background: var(--dm-bg);
+            border-color: var(--dm-border);
+            color: var(--dm-text);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: 2px solid var(--accent-teal);
+            outline-offset: 0;
+            border-color: var(--accent-teal);
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--accent-teal);
+            color: var(--text-light);
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-speed) var(--transition-timing);
+        }
+        
+        .submit-btn:hover,
+        .submit-btn:focus {
+            background: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 25, 53, 0.3);
+        }
+        
+        .submit-btn:focus {
+            outline: 2px solid var(--accent-teal);
+            outline-offset: 2px;
+        }
+        
+        /* ========================================
+           FOOTER
+           ======================================== */
+        footer {
+            background: var(--primary);
+            color: var(--text-light);
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+        
+        body.dark-mode footer {
+            background: var(--dm-card);
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--accent-teal);
+        }
+        
+        .footer-section p,
+        .footer-section a {
+            color: var(--text-light);
+            text-decoration: none;
+            line-height: 2;
+            transition: color var(--transition-speed) var(--transition-timing);
+        }
+        
+        .footer-section a:hover,
+        .footer-section a:focus {
+            color: var(--accent-teal);
+        }
+        
+        .footer-section a:focus {
+            outline: 2px solid var(--accent-teal);
+            outline-offset: 2px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--accent-teal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all var(--transition-speed) var(--transition-timing);
+            font-weight: bold;
+        }
+        
+        .social-link:hover,
+        .social-link:focus {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 216, 190, 0.3);
+            background: var(--primary);
+        }
+        
+        .social-link:focus {
+            outline: 2px solid white;
+            outline-offset: 2px;
+        }
+        
+        /* ========================================
+           RESPONSIVE DESIGN
+           ======================================== */
+        @media (max-width: 768px) {
+            .persona-nav {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-right {
+                gap: 1rem;
+            }
+            
+            .hero {
+                padding: 3rem 1.5rem;
+            }
+            
+            .carousel-card {
+                min-width: 280px;
+            }
+            
+            .logo-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 1rem;
+                padding: 2rem 1rem;
+            }
+            
+            .persona-section {
+                padding: 2rem 1rem;
+            }
+            
+            .modal {
+                padding: 2rem;
+                width: 95%;
+            }
+        }
+        
+        /* ========================================
+           MOBILE MENU OVERLAY
+           ======================================== */
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 999;
+            display: none;
+            padding: 5rem 2rem;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .mobile-menu-overlay.active {
+            display: flex;
+        }
+        
+        .mobile-persona-link {
+            font-size: 1.5rem;
+            color: var(--text-light);
+            text-decoration: none;
+            text-align: center;
+            padding: 1rem;
+            border: 2px solid var(--accent-teal);
+            border-radius: 8px;
+            transition: all var(--transition-speed) var(--transition-timing);
+            cursor: pointer;
+        }
+        
+        .mobile-persona-link:hover,
+        .mobile-persona-link:focus,
+        .mobile-persona-link.active {
+            background: var(--accent-teal);
+        }
+        
+        .mobile-persona-link:focus {
+            outline: 2px solid white;
+            outline-offset: 2px;
+        }
+        
+        .mobile-menu-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 2rem;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .mobile-menu-close:focus {
+            outline: 2px solid var(--accent-teal);
+            outline-offset: 2px;
+        }
+        
+        /* ========================================
+           UTILITY CLASSES
+           ======================================== */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Screen Reader Skip Link -->
+    <a href="#main-content" class="sr-only">Skip to main content</a>
+    
+    <!-- Header -->
+    <header role="banner">
+        <nav role="navigation" aria-label="Main navigation">
+            <div class="nav-left">
+                <img src="images/headshot-thumb.jpg" alt="Balaji Ganapathy" class="profile-thumb">
+                <div class="logo-text">Balaji Ganapathy</div>
+            </div>
+            <div class="nav-right">
+                <div class="persona-nav" role="tablist" aria-label="Persona navigation">
+                    <button class="persona-link active" role="tab" aria-selected="true" aria-controls="leader-panel" data-persona="0" tabindex="0">Leader</button>
+                    <button class="persona-link" role="tab" aria-selected="false" aria-controls="speaker-panel" data-persona="1" tabindex="-1">Speaker</button>
+                    <button class="persona-link" role="tab" aria-selected="false" aria-controls="advisor-panel" data-persona="2" tabindex="-1">Advisor</button>
+                    <button class="persona-link" role="tab" aria-selected="false" aria-controls="coach-panel" data-persona="3" tabindex="-1">Coach</button>
+                </div>
+                <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode" aria-pressed="false">🌙</button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Mobile menu">
+        <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">×</button>
+        <button class="mobile-persona-link active" data-persona="0">Leader</button>
+        <button class="mobile-persona-link" data-persona="1">Speaker</button>
+        <button class="mobile-persona-link" data-persona="2">Advisor</button>
+        <button class="mobile-persona-link" data-persona="3">Coach</button>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <div class="persona-container">
+            <!-- LEADER SECTION -->
+            <section class="persona-section" id="leader-panel" role="tabpanel" aria-labelledby="leader-tab">
+                <div class="persona-inner">
+                    <!-- Hero -->
+                    <div class="hero">
+                        <div class="hero-content">
+                            <div class="tagline">Purpose is the New Tech</div>
+                            <h1>Leader</h1>
+                            <div class="subtitle">Globally respected C-level executive</div>
+                            <a href="#" class="hero-cta" role="button" data-modal-trigger>Let's Talk</a>
+                        </div>
+                    </div>
+
+                    <!-- About -->
+                    <div class="content-section">
+                        <p class="section-description">
+                            Balaji is a C-level executive with over 25 years of U.S. and global experience, building purposeful organizations and stewarding inclusive growth. 
+                            Guided by a belief in "prosperity at the last mile," he architected one of the world's largest impact portfolios at the $30B technology firm Tata Consultancy Services (TCS), 
+                            advancing economic mobility for 30+ million women, youth, and marginalized groups across 55 countries.
+                        </p>
+                    </div>
+
+                    <!-- Impact @ Scale -->
+                    <div class="content-section">
+                        <h2 class="section-title">Impact @ Scale</h2>
+                        <div class="carousel-container">
+                            <div class="carousel" role="region" aria-label="Impact metrics carousel">
+                                <div class="carousel-card">
+                                    <div class="metric-number" data-count="2500000">2.5M</div>
+                                    <div class="metric-label">STEM Education</div>
+                                    <div class="metric-description">48 countries, 50%+ girls, 70%+ underrepresented minorities</div>
+                                </div>
+                                <div class="carousel-card">
+                                    <div class="metric-number" data-count="6000">6K</div>
+                                    <div class="metric-label">Digital Entrepreneurship</div>
+                                    <div class="metric-description">Villages across 10 states in India, 90% women</div>
+                                </div>
+                                <div class="carousel-card">
+                                    <div class="metric-number" data-count="158000">158K</div>
+                                    <div class="metric-label">Youth Employment</div>
+                                    <div class="metric-description">36 states in India, INR 3 lac average earnings</div>
+                                </div>
+                                <div class="carousel-card">
+                                    <div class="metric-number" data-count="3000000">3M</div>
+                                    <div class="metric-label">Literacy to Livelihood</div>
+                                    <div class="metric-description">Marginalized communities across 10 states in India</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Public Engagement -->
+                    <div class="content-section">
+                        <h2 class="section-title">Public Engagement</h2>
+                        <div class="logo-grid" role="list" aria-label="Public engagement organizations">
+                            <div class="logo-item" role="listitem">World Economic Forum</div>
+                            <div class="logo-item" role="listitem">U.S. Chamber of Commerce</div>
+                            <div class="logo-item" role="listitem">United Nations</div>
+                            <div class="logo-item" role="listitem">CECP</div>
+                            <div class="logo-item" role="listitem">Stanford</div>
+                            <div class="logo-item" role="listitem">Harvard</div>
+                            <div class="logo-item" role="listitem">Wharton</div>
+                            <div class="logo-item" role="listitem">NYU</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SPEAKER SECTION -->
+            <section class="persona-section" id="speaker-panel" role="tabpanel" aria-labelledby="speaker-tab">
+                <div class="persona-inner">
+                    <!-- Hero -->
+                    <div class="hero">
+                        <div class="hero-content">
+                            <div class="tagline">Keynote Speaker</div>
+                            <h1>Speaker</h1>
+                            <div class="subtitle">Inspiring audiences worldwide on purpose-driven leadership</div>
+                            <a href="#" class="hero-cta" role="button" data-modal-trigger>Invite to Speak</a>
+                        </div>
+                    </div>
+
+                    <!-- Speaking Topics -->
+                    <div class="content-section">
+                        <h2 class="section-title">Keynote Topics</h2>
+                        <div class="accordion" role="region" aria-label="Keynote topics">
+                            <div class="accordion-item">
+                                <button class="accordion-header" aria-expanded="false" aria-controls="topic-1">
+                                    <div class="accordion-title">Purpose-Driven Leadership</div>
+                                    <div class="accordion-icon" aria-hidden="true">▼</div>
+                                </button>
+                                <div class="accordion-content" id="topic-1">
+                                    <div class="accordion-body">
+                                        Leading with purpose in the era of stakeholder capitalism. Explore how purpose-driven organizations outperform peers, 
+                                        attract top talent, and build stronger brands while driving sustainable growth.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <button class="accordion-header" aria-expanded="false" aria-controls="topic-2">
+                                    <div class="accordion-title">AI for Social Good</div>
+                                    <div class="accordion-icon" aria-hidden="true">▼</div>
+                                </button>
+                                <div class="accordion-content" id="topic-2">
+                                    <div class="accordion-body">
+                                        Leveraging artificial intelligence for positive social change. Discover how AI can address global challenges 
+                                        in education, healthcare, workforce development, and sustainable development.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <button class="accordion-header" aria-expanded="false" aria-controls="topic-3">
+                                    <div class="accordion-title">Future of Work & Inclusion</div>
+                                    <div class="accordion-icon" aria-hidden="true">▼</div>
+                                </button>
+                                <div class="accordion-content" id="topic-3">
+                                    <div class="accordion-body">
+                                        Creating inclusive workplaces in the digital transformation era. Explore strategies for building diverse teams, 
+                                        fostering belonging, and preparing the workforce for emerging opportunities.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Speaking Highlights -->
+                    <div class="content-section">
+                        <h2 class="section-title">Speaking Highlights</h2>
+                        <div class="carousel-container">
+                            <div class="carousel" role="region" aria-label="Speaking engagements carousel">
+                                <div class="carousel-card">
+                                    <div class="metric-label">World Economic Forum</div>
+                                    <div class="metric-description">Sustainable Development Impact Summit</div>
+                                </div>
+                                <div class="carousel-card">
+                                    <div class="metric-label">US Chamber of Commerce</div>
+                                    <div class="metric-description">Business Solves Summit</div>
+                                </div>
+                                <div class="carousel-card">
+                                    <div class="metric-label">CECP Summit</div>
+                                    <div class="metric-description">Purpose-Driven Leadership</div>
+                                </div>
+                                <div class="carousel-card">
+                                    <div class="metric-label">SXSW</div>
+                                    <div class="metric-description">Technology for Social Impact</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ADVISOR SECTION -->
+            <section class="persona-section" id="advisor-panel" role="tabpanel" aria-labelledby="advisor-tab">
+                <div class="persona-inner">
+                    <!-- Hero -->
+                    <div class="hero">
+                        <div class="hero-content">
+                            <div class="tagline">Grassroots Impact. Population Scale.</div>
+                            <h1>Advisor</h1>
+                            <div class="subtitle">Trusted Advisor to Fortune 500 Companies & Foundations</div>
+                            <a href="#" class="hero-cta" role="button" data-modal-trigger>Request Advisory Call</a>
+                        </div>
+                    </div>
+
+                    <!-- About -->
+                    <div class="content-section">
+                        <p class="section-description">
+                            Balaji has advised CXOs and Fortune 500 companies, supporting over $30 billion digital transformation deals. 
+                            A firm believer in the power of building movements & enabling systems change, he has advised numerous impact organizations 
+                            to aspire for big bets, ground in their values, innovate their strategy & elevate their impact.
+                        </p>
+                    </div>
+
+                    <!-- Expertise -->
+                    <div class="content-section">
+                        <h2 class="section-title">Expertise</h2>
+                        <div class="carousel-container">
+                            <div class="carousel" role="region" aria-label="Expertise areas carousel">
+                                <div class="carousel-card">
+                                    <div class="metric-label">Purposeful Business</div>
+                                </div>
+                                <div class="carousel-card">
+                                    <div class="metric-label">Strategic Philanthropy</div>
+                                </div>
+                                <div class="carousel-card">
+                                    <div class="metric-label">Social Impact</div>
+                                </div>
+                                <div class="carousel-card">
+                                    <div class="metric-label">ESG Strategy</div>
+                                </div>
+                                <div class="carousel-card">
+                                    <div class="metric-label">Board Governance</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Case Studies -->
+                    <div class="content-section">
+                        <h2 class="section-title">Case Studies</h2>
+                        <div class="carousel-container">
+                            <div class="carousel" role="region" aria-label="Case studies carousel">
+                                <div class="carousel-card">
+                                    <div class="metric-label">WEF: Closing the Skills Gap</div>
+                                    <div class="metric-description">17.2M reskilled, global framework for education & work</div>
+                                </div>
+                                <div class="carousel-card">
+                                    <div class="metric-label">Commission for Asian Philanthropy</div>
+                                    <div class="metric-description">Elevating impact for 60% of world's population</div>
+                                </div>
+                                <div class="carousel-card">
+                                    <div class="metric-label">CECP Integration</div>
+                                    <div class="metric-description">Purpose across 250+ companies at scale</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- COACH SECTION -->
+            <section class="persona-section" id="coach-panel" role="tabpanel" aria-labelledby="coach-tab">
+                <div class="persona-inner">
+                    <!-- Hero -->
+                    <div class="hero">
+                        <div class="hero-content">
+                            <div class="tagline">Purpose. Clarity. Alignment. Velocity.</div>
+                            <h1>Coach</h1>
+                            <div class="subtitle">Nurturing leaders & teams to serve society with humility</div>
+                            <a href="#" class="hero-cta" role="button" data-modal-trigger>Find Your Purpose</a>
+                        </div>
+                    </div>
+
+                    <!-- About -->
+                    <div class="content-section">
+                        <p class="section-description">
+                            Balaji coaches leaders and boards to align purpose with performance. With 25+ years building world-class teams across 45,000+ people, 
+                            he helps executives unlock their vision, discover authentic leadership, and scale impact. My philosophy: great teams amplify great missions.
+                        </p>
+                    </div>
+
+                    <!-- Coaching Focus Areas -->
+                    <div class="content-section">
+                        <h2 class="section-title">Coaching Focus</h2>
+                        <div class="carousel-container">
+                            <div class="carousel" role="region" aria-label="Coaching focus areas">
+                                <div class="carousel-card">
+                                    <div class="metric-label">Leadership Development</div>
+                                    <div class="metric-description">Executive presence & strategic thinking</div>
+                                </div>
+                                <div class="carousel-card">
+                                    <div class="metric-label">Team Building</div>
+                                    <div class="metric-description">High-performing, inclusive cultures</div>
+                                </div>
+                                <div class="carousel-card">
+                                    <div class="metric-label">Purpose Discovery</div>
+                                    <div class="metric-description">Aligning values with impact</div>
+                                </div>
+                                <div class="carousel-card">
+                                    <div class="metric-label">Change Management</div>
+                                    <div class="metric-description">Leading transformation at scale</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Contact Modal -->
+    <div class="modal-overlay" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal">
+            <button class="modal-close" id="modalClose" aria-label="Close contact form">×</button>
+            <h2 id="modal-title">Let's Connect</h2>
+            <form id="contactForm" novalidate>
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required aria-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required aria-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" required aria-required="true"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Balaji Ganapathy</h3>
+                <p>Purpose is the New Tech</p>
+                <p>C-Level Executive | Advisor | Speaker | Coach</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <p><a href="mailto:contact@balajiganapathy.com">contact@balajiganapathy.com</a></p>
+                <p>New York Metropolitan Area</p>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/balajiganapathy" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a>
+                    <a href="https://twitter.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Twitter">𝕏</a>
+                    <a href="https://medium.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Medium">M</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><button class="persona-link" data-persona="0" style="background:none;border:none;color:white;cursor:pointer;padding:0;font-size:inherit;line-height:2;">Leader</button></p>
+                <p><button class="persona-link" data-persona="1" style="background:none;border:none;color:white;cursor:pointer;padding:0;font-size:inherit;line-height:2;">Speaker</button></p>
+                <p><button class="persona-link" data-persona="2" style="background:none;border:none;color:white;cursor:pointer;padding:0;font-size:inherit;line-height:2;">Advisor</button></p>
+                <p><button class="persona-link" data-persona="3" style="background:none;border:none;color:white;cursor:pointer;padding:0;font-size:inherit;line-height:2;">Coach</button></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ========================================
+        // PERSONA NAVIGATION WITH SWIPE SUPPORT
+        // ========================================
+        let currentPersona = 0;
+        const totalPersonas = 4;
+        const container = document.querySelector('.persona-container');
+        const personaLinks = document.querySelectorAll('.persona-link:not(.mobile-persona-link)');
+        const mobilePersonaLinks = document.querySelectorAll('.mobile-persona-link');
+        
+        // Touch/swipe support
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        function switchPersona(index) {
+            // Circular looping
+            if (index < 0) index = totalPersonas - 1;
+            if (index >= totalPersonas) index = 0;
+            
+            currentPersona = index;
+            
+            // Transform container
+            const offset = -25 * index;
+            container.style.transform = `translateX(${offset}%)`;
+            
+            // Update nav links
+            personaLinks.forEach((link, i) => {
+                const isActive = parseInt(link.dataset.persona) === index;
+                link.classList.toggle('active', isActive);
+                link.setAttribute('aria-selected', isActive);
+                link.setAttribute('tabindex', isActive ? '0' : '-1');
+            });
+            
+            mobilePersonaLinks.forEach((link, i) => {
+                const isActive = parseInt(link.dataset.persona) === index;
+                link.classList.toggle('active', isActive);
+            });
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        // Click handlers
+        [...personaLinks, ...mobilePersonaLinks].forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                switchPersona(parseInt(link.dataset.persona));
+                if (link.classList.contains('mobile-persona-link')) {
+                    closeMobileMenu();
+                }
+            });
+        });
+        
+        // Keyboard navigation for persona tabs
+        personaLinks.forEach((link, index) => {
+            link.addEventListener('keydown', (e) => {
+                let newIndex = index;
+                
+                if (e.key === 'ArrowRight') {
+                    e.preventDefault();
+                    newIndex = (index + 1) % totalPersonas;
+                } else if (e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    newIndex = (index - 1 + totalPersonas) % totalPersonas;
+                } else if (e.key === 'Home') {
+                    e.preventDefault();
+                    newIndex = 0;
+                } else if (e.key === 'End') {
+                    e.preventDefault();
+                    newIndex = totalPersonas - 1;
+                }
+                
+                if (newIndex !== index) {
+                    switchPersona(newIndex);
+                    personaLinks[newIndex].focus();
+                }
+            });
+        });
+        
+        // Touch/Swipe navigation
+        document.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+        
+        document.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+        
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    // Swipe left - next persona
+                    switchPersona(currentPersona + 1);
+                } else {
+                    // Swipe right - previous persona
+                    switchPersona(currentPersona - 1);
+                }
+            }
+        }
+        
+        // Arrow key navigation (desktop)
+        document.addEventListener('keydown', (e) => {
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+            
+            if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                switchPersona(currentPersona + 1);
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                switchPersona(currentPersona - 1);
+            }
+        });
+        
+        // ========================================
+        // DARK MODE
+        // ========================================
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+        
+        // Check for saved preference
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+            darkModeToggle.textContent = '☀️';
+            darkModeToggle.setAttribute('aria-pressed', 'true');
+        }
+        
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            const isDark = body.classList.contains('dark-mode');
+            darkModeToggle.textContent = isDark ? '☀️' : '🌙';
+            darkModeToggle.setAttribute('aria-pressed', isDark);
+            localStorage.setItem('darkMode', isDark ? 'enabled' : null);
+        });
+        
+        // ========================================
+        // MOBILE MENU
+        // ========================================
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        
+        function openMobileMenu() {
+            mobileMenu.classList.add('active');
+            mobileMenuBtn.setAttribute('aria-expanded', 'true');
+            // Trap focus
+            mobileMenuClose.focus();
+        }
+        
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('active');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            mobileMenuBtn.focus();
+        }
+        
+        mobileMenuBtn.addEventListener('click', openMobileMenu);
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+        
+        // Close on escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                closeMobileMenu();
+            }
+        });
+        
+        // ========================================
+        // ACCORDION
+        // ========================================
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+        
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                const wasActive = item.classList.contains('active');
+                
+                // Close all accordions
+                document.querySelectorAll('.accordion-item').forEach(i => {
+                    i.classList.remove('active');
+                    const h = i.querySelector('.accordion-header');
+                    h.setAttribute('aria-expanded', 'false');
+                });
+                
+                // Open clicked accordion if it wasn't active
+                if (!wasActive) {
+                    item.classList.add('active');
+                    header.setAttribute('aria-expanded', 'true');
+                }
+            });
+            
+            // Keyboard support
+            header.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    header.click();
+                }
+            });
+        });
+        
+        // ========================================
+        // CONTACT MODAL
+        // ========================================
+        const modalOverlay = document.getElementById('contactModal');
+        const modalClose = document.getElementById('modalClose');
+        const modalTriggers = document.querySelectorAll('[data-modal-trigger]');
+        const contactForm = document.getElementById('contactForm');
+        
+        function openModal() {
+            modalOverlay.classList.add('active');
+            modalClose.focus();
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal() {
+            modalOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        modalTriggers.forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                openModal();
+            });
+        });
+        
+        modalClose.addEventListener('click', closeModal);
+        
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                closeModal();
+            }
+        });
+        
+        // Close on escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+                closeModal();
+            }
+        });
+        
+        // Form submission
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            if (!name || !email || !message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            if (!email.includes('@')) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            
+            // Success (replace with actual form submission)
+            alert('Thank you for your message! I\'ll get back to you soon.');
+            contactForm.reset();
+            closeModal();
+        });
+        
+        // ========================================
+        // ANIMATED METRIC COUNTERS
+        // ========================================
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.dataset.animated) {
+                    animateCounter(entry.target);
+                    entry.target.dataset.animated = 'true';
+                }
+            });
+        }, observerOptions);
+        
+        function animateCounter(element) {
+            const target = parseInt(element.dataset.count) || 0;
+            if (!target) return;
+            
+            const duration = 2000;
+            const increment = target / (duration / 16);
+            let current = 0;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                
+                element.textContent = formatNumber(Math.floor(current));
+            }, 16);
+        }
+        
+        function formatNumber(num) {
+            if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
+            if (num >= 1000) return (num / 1000).toFixed(0) + 'K';
+            return num.toString();
+        }
+        
+        // Observe all metric numbers
+        document.querySelectorAll('.metric-number[data-count]').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // ========================================
+        // SMOOTH CAROUSEL KEYBOARD NAVIGATION
+        // ========================================
+        document.querySelectorAll('.carousel').forEach(carousel => {
+            carousel.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') {
+                    e.preventDefault();
+                    carousel.scrollLeft += 320;
+                } else if (e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    carousel.scrollLeft -= 320;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
