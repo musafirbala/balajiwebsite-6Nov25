@@ -235,7 +235,7 @@
             margin: 0 auto;
         }
         
-        /* HERO WITH LIGHTER OVERLAY */
+        /* HERO WITH 25% OPACITY */
         .hero {
             text-align: center;
             padding: 6rem 2rem;
@@ -249,7 +249,7 @@
             background-position: center;
         }
         
-        /* LIGHTER OVERLAY - 40% opacity instead of 85% */
+        /* 25% OPACITY - Maximum visibility */
         .hero::before {
             content: '';
             position: absolute;
@@ -257,12 +257,12 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, rgba(0, 25, 53, 0.4) 0%, rgba(10, 46, 92, 0.4) 100%);
+            background: linear-gradient(135deg, rgba(0, 25, 53, 0.25) 0%, rgba(10, 46, 92, 0.25) 100%);
             z-index: 1;
         }
         
         body.dark-mode .hero::before {
-            background: linear-gradient(135deg, rgba(0, 25, 53, 0.5) 0%, rgba(0, 216, 190, 0.2) 100%);
+            background: linear-gradient(135deg, rgba(0, 25, 53, 0.35) 0%, rgba(0, 216, 190, 0.15) 100%);
         }
         
         .hero.leader-hero {
@@ -284,7 +284,7 @@
         .hero-content {
             position: relative;
             z-index: 2;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7), 0 4px 20px rgba(0, 0, 0, 0.5);
         }
         
         .hero h1 {
@@ -351,7 +351,7 @@
             text-align: center;
         }
         
-        /* FIXED CAROUSEL - No Overlap */
+        /* CAROUSEL - 10 SECONDS ON BOTH DESKTOP & MOBILE */
         .carousel-container {
             position: relative;
             margin: 2rem 0;
@@ -439,20 +439,11 @@
             color: #999;
         }
         
-        /* MOBILE CAROUSEL - Full Width Cards */
+        /* MOBILE - SAME 10 SECOND SPEED */
         @media (max-width: 768px) {
             .carousel {
                 gap: 1rem;
-                animation: scroll-mobile 10s linear infinite;
-            }
-            
-            @keyframes scroll-mobile {
-                0% {
-                    transform: translateX(0);
-                }
-                100% {
-                    transform: translateX(calc(-50% - 0.5rem));
-                }
+                animation: scroll 10s linear infinite;
             }
             
             .carousel-track {
@@ -1204,7 +1195,6 @@
                         </div>
                     </div>
 
-                    <!-- About Text -->
                     <div class="content-section">
                         <p class="section-description">
                             Balaji has advised CXOs and Fortune 500 companies, supporting over $30 billion digital transformation deals, 
@@ -1224,7 +1214,6 @@
                         </p>
                     </div>
 
-                    <!-- Video -->
                     <div class="content-section">
                         <h2 class="section-title">Advisory in Action</h2>
                         <div class="video-container">
@@ -1235,7 +1224,6 @@
                         </div>
                     </div>
 
-                    <!-- Expertise -->
                     <div class="content-section">
                         <h2 class="section-title">Expertise</h2>
                         <div class="carousel-container">
@@ -1266,7 +1254,6 @@
                         </div>
                     </div>
 
-                    <!-- Case Studies -->
                     <div class="content-section">
                         <h2 class="section-title">Case Studies</h2>
                         <div class="carousel-container">
@@ -1341,7 +1328,6 @@
                         </div>
                     </div>
 
-                    <!-- Speaking Highlights -->
                     <div class="content-section">
                         <h2 class="section-title">Speaking Highlights</h2>
                         <div class="carousel-container">
@@ -1386,7 +1372,6 @@
                         </div>
                     </div>
 
-                    <!-- Podcast Highlights -->
                     <div class="content-section">
                         <h2 class="section-title">Podcast Highlights</h2>
                         <div class="carousel-container">
@@ -1407,7 +1392,6 @@
                         </div>
                     </div>
 
-                    <!-- Keynote Topics -->
                     <div class="content-section">
                         <h2 class="section-title">Keynote Topics</h2>
                         <div class="accordion">
@@ -1488,7 +1472,6 @@
                         </div>
                     </div>
 
-                    <!-- About Text -->
                     <div class="content-section">
                         <p class="section-description">
                             Balaji has 25+ years' experience building high-performing teams, mentoring leaders and guiding organizations through change & transformation. 
@@ -1498,7 +1481,6 @@
                         </p>
                     </div>
 
-                    <!-- Team Photos -->
                     <div class="content-section">
                         <h2 class="section-title">Building Teams Across Cultures</h2>
                         <div class="image-gallery">
@@ -1515,7 +1497,6 @@
         </div>
     </main>
 
-    <!-- Contact Modal -->
     <div class="modal-overlay" id="contactModal">
         <div class="modal">
             <button class="modal-close" id="modalClose">×</button>
@@ -1538,7 +1519,6 @@
         </div>
     </div>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -1567,7 +1547,6 @@
     </footer>
 
     <script>
-        // PERSONA NAVIGATION
         let currentPersona = 0;
         const container = document.querySelector('.persona-container');
         const personaLinks = document.querySelectorAll('.persona-link');
@@ -1604,7 +1583,6 @@
             });
         });
         
-        // TOUCH SWIPE
         let touchStartX = 0;
         let touchEndX = 0;
         
@@ -1624,7 +1602,6 @@
             }
         });
         
-        // DARK MODE
         const darkModeToggle = document.getElementById('darkModeToggle');
         if (localStorage.getItem('darkMode') === 'enabled') {
             document.body.classList.add('dark-mode');
@@ -1638,7 +1615,6 @@
             localStorage.setItem('darkMode', isDark ? 'enabled' : null);
         });
         
-        // MOBILE MENU
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         const mobileMenuClose = document.getElementById('mobileMenuClose');
@@ -1653,7 +1629,6 @@
         
         mobileMenuClose.addEventListener('click', closeMobileMenu);
         
-        // ACCORDION
         document.querySelectorAll('.accordion-header').forEach(header => {
             header.addEventListener('click', () => {
                 const item = header.parentElement;
@@ -1669,7 +1644,6 @@
             });
         });
         
-        // MODAL
         const modalOverlay = document.getElementById('contactModal');
         const modalClose = document.getElementById('modalClose');
         const modalTriggers = document.querySelectorAll('[data-modal-trigger]');
