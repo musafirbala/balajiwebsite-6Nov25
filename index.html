@@ -233,20 +233,55 @@
             margin: 0 auto;
         }
         
-        /* HERO */
+        /* HERO WITH BACKGROUND IMAGES */
         .hero {
             text-align: center;
-            padding: 4rem 2rem;
+            padding: 6rem 2rem;
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
             color: var(--text-light);
             border-radius: 12px;
             margin-bottom: 3rem;
             position: relative;
             overflow: hidden;
+            background-size: cover;
+            background-position: center;
         }
         
-        body.dark-mode .hero {
-            background: linear-gradient(135deg, #001935 0%, #00D8BE 100%);
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 25, 53, 0.85) 0%, rgba(10, 46, 92, 0.85) 100%);
+            z-index: 1;
+        }
+        
+        body.dark-mode .hero::before {
+            background: linear-gradient(135deg, rgba(0, 25, 53, 0.9) 0%, rgba(0, 216, 190, 0.3) 100%);
+        }
+        
+        /* Background images for each hero */
+        .hero.leader-hero {
+            background-image: url('images/youth-movement.jpg');
+        }
+        
+        .hero.advisor-hero {
+            background-image: url('images/speaking-panel.jpg');
+        }
+        
+        .hero.speaker-hero {
+            background-image: url('images/field-engagement.jpg');
+        }
+        
+        .hero.coach-hero {
+            background-image: url('images/team-collaboration.jpg');
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
         }
         
         .hero h1 {
@@ -285,6 +320,7 @@
         .hero-cta:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(0, 216, 190, 0.4);
+            background: var(--primary-light);
         }
         
         /* CONTENT SECTIONS */
@@ -312,7 +348,7 @@
             text-align: center;
         }
         
-        /* AUTO-SCROLLING CAROUSEL */
+        /* INFINITE LOOP CAROUSEL */
         .carousel-container {
             position: relative;
             margin: 2rem 0;
@@ -322,30 +358,26 @@
         .carousel {
             display: flex;
             gap: 2rem;
-            overflow-x: auto;
-            scroll-behavior: smooth;
             padding: 1rem 0;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: thin;
-            scrollbar-color: var(--accent-teal) var(--bg-gray);
+            animation: scroll 30s linear infinite;
         }
         
-        .carousel::-webkit-scrollbar {
-            height: 8px;
+        .carousel:hover {
+            animation-play-state: paused;
         }
         
-        .carousel::-webkit-scrollbar-track {
-            background: var(--bg-gray);
-            border-radius: 10px;
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-100% - 2rem));
+            }
         }
         
-        body.dark-mode .carousel::-webkit-scrollbar-track {
-            background: var(--dm-card);
-        }
-        
-        .carousel::-webkit-scrollbar-thumb {
-            background: var(--accent-teal);
-            border-radius: 10px;
+        .carousel-track {
+            display: flex;
+            gap: 2rem;
         }
         
         .carousel-card {
@@ -718,6 +750,10 @@
                 padding: 2rem 1rem;
             }
             
+            .hero {
+                padding: 4rem 1.5rem;
+            }
+            
             .carousel-card {
                 min-width: 280px;
             }
@@ -835,7 +871,7 @@
             <!-- LEADER SECTION -->
             <section class="persona-section">
                 <div class="persona-inner">
-                    <div class="hero">
+                    <div class="hero leader-hero">
                         <div class="hero-content">
                             <div class="tagline">Purpose is the New Tech</div>
                             <h1>Leader</h1>
@@ -847,21 +883,41 @@
                     <!-- Main Impact Metrics -->
                     <div class="content-section">
                         <div class="carousel-container">
-                            <div class="carousel auto-scroll">
-                                <div class="carousel-card">
-                                    <div class="metric-number">30M+</div>
-                                    <div class="metric-label">Women, Youth & Marginalized Groups</div>
-                                    <div class="metric-description">Economic mobility advanced across 55 countries</div>
+                            <div class="carousel">
+                                <div class="carousel-track">
+                                    <div class="carousel-card">
+                                        <div class="metric-number">30M+</div>
+                                        <div class="metric-label">Women, Youth & Marginalized Groups</div>
+                                        <div class="metric-description">Economic mobility advanced across 55 countries</div>
+                                    </div>
+                                    <div class="carousel-card">
+                                        <div class="metric-number">55</div>
+                                        <div class="metric-label">Countries</div>
+                                        <div class="metric-description">Global impact portfolio spanning five continents</div>
+                                    </div>
+                                    <div class="carousel-card">
+                                        <div class="metric-number">$650M</div>
+                                        <div class="metric-label">Community Investments</div>
+                                        <div class="metric-description">Mobilized for transformational change</div>
+                                    </div>
                                 </div>
-                                <div class="carousel-card">
-                                    <div class="metric-number">55</div>
-                                    <div class="metric-label">Countries</div>
-                                    <div class="metric-description">Global impact portfolio spanning five continents</div>
-                                </div>
-                                <div class="carousel-card">
-                                    <div class="metric-number">$650M</div>
-                                    <div class="metric-label">Community Investments</div>
-                                    <div class="metric-description">Mobilized for transformational change</div>
+                                <!-- Duplicate for infinite loop -->
+                                <div class="carousel-track">
+                                    <div class="carousel-card">
+                                        <div class="metric-number">30M+</div>
+                                        <div class="metric-label">Women, Youth & Marginalized Groups</div>
+                                        <div class="metric-description">Economic mobility advanced across 55 countries</div>
+                                    </div>
+                                    <div class="carousel-card">
+                                        <div class="metric-number">55</div>
+                                        <div class="metric-label">Countries</div>
+                                        <div class="metric-description">Global impact portfolio spanning five continents</div>
+                                    </div>
+                                    <div class="carousel-card">
+                                        <div class="metric-number">$650M</div>
+                                        <div class="metric-label">Community Investments</div>
+                                        <div class="metric-description">Mobilized for transformational change</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -916,26 +972,50 @@
                     <div class="content-section">
                         <h2 class="section-title">Impact @ Scale</h2>
                         <div class="carousel-container">
-                            <div class="carousel auto-scroll">
-                                <div class="carousel-card">
-                                    <div class="metric-number">2.5M</div>
-                                    <div class="metric-label">STEM Education</div>
-                                    <div class="metric-description">48 countries, 50%+ girls, 70%+ underrepresented minorities, 21st century skills, Computational Thinking</div>
+                            <div class="carousel">
+                                <div class="carousel-track">
+                                    <div class="carousel-card">
+                                        <div class="metric-number">2.5M</div>
+                                        <div class="metric-label">STEM Education</div>
+                                        <div class="metric-description">48 countries, 50%+ girls, 70%+ underrepresented minorities, 21st century skills</div>
+                                    </div>
+                                    <div class="carousel-card">
+                                        <div class="metric-number">6K</div>
+                                        <div class="metric-label">Digital Entrepreneurship</div>
+                                        <div class="metric-description">India: Villages across 10 states, 90% women, INR22K average earnings</div>
+                                    </div>
+                                    <div class="carousel-card">
+                                        <div class="metric-number">158K</div>
+                                        <div class="metric-label">Youth Employment</div>
+                                        <div class="metric-description">India: Youth across 36 states, INR 3 lac average earnings</div>
+                                    </div>
+                                    <div class="carousel-card">
+                                        <div class="metric-number">3M</div>
+                                        <div class="metric-label">Literacy to Livelihood</div>
+                                        <div class="metric-description">India: Marginalized communities across 10 states</div>
+                                    </div>
                                 </div>
-                                <div class="carousel-card">
-                                    <div class="metric-number">6K</div>
-                                    <div class="metric-label">Digital Entrepreneurship</div>
-                                    <div class="metric-description">India: Villages across 10 states, 90% women, INR22K average earnings</div>
-                                </div>
-                                <div class="carousel-card">
-                                    <div class="metric-number">158K</div>
-                                    <div class="metric-label">Youth Employment</div>
-                                    <div class="metric-description">India: Youth across 36 states, INR 3 lac average earnings</div>
-                                </div>
-                                <div class="carousel-card">
-                                    <div class="metric-number">3M</div>
-                                    <div class="metric-label">Literacy to Livelihood</div>
-                                    <div class="metric-description">India: Marginalized communities across 10 states</div>
+                                <div class="carousel-track">
+                                    <div class="carousel-card">
+                                        <div class="metric-number">2.5M</div>
+                                        <div class="metric-label">STEM Education</div>
+                                        <div class="metric-description">48 countries, 50%+ girls, 70%+ underrepresented minorities, 21st century skills</div>
+                                    </div>
+                                    <div class="carousel-card">
+                                        <div class="metric-number">6K</div>
+                                        <div class="metric-label">Digital Entrepreneurship</div>
+                                        <div class="metric-description">India: Villages across 10 states, 90% women, INR22K average earnings</div>
+                                    </div>
+                                    <div class="carousel-card">
+                                        <div class="metric-number">158K</div>
+                                        <div class="metric-label">Youth Employment</div>
+                                        <div class="metric-description">India: Youth across 36 states, INR 3 lac average earnings</div>
+                                    </div>
+                                    <div class="carousel-card">
+                                        <div class="metric-number">3M</div>
+                                        <div class="metric-label">Literacy to Livelihood</div>
+                                        <div class="metric-description">India: Marginalized communities across 10 states</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -945,26 +1025,50 @@
                     <div class="content-section">
                         <h2 class="section-title">Purpose Ecosystem</h2>
                         <div class="carousel-container">
-                            <div class="carousel auto-scroll">
-                                <div class="carousel-card">
-                                    <div class="metric-number">20M</div>
-                                    <div class="metric-label">Volunteering Hours</div>
-                                    <div class="metric-description">Mobilized across global workforce for community impact</div>
+                            <div class="carousel">
+                                <div class="carousel-track">
+                                    <div class="carousel-card">
+                                        <div class="metric-number">20M</div>
+                                        <div class="metric-label">Volunteering Hours</div>
+                                        <div class="metric-description">Mobilized across global workforce</div>
+                                    </div>
+                                    <div class="carousel-card">
+                                        <div class="metric-number">$40M</div>
+                                        <div class="metric-label">Pro-Bono Value</div>
+                                        <div class="metric-description">Technology expertise for social good</div>
+                                    </div>
+                                    <div class="carousel-card">
+                                        <div class="metric-number">188</div>
+                                        <div class="metric-label">Partnerships</div>
+                                        <div class="metric-description">Cross-sector collaborations</div>
+                                    </div>
+                                    <div class="carousel-card">
+                                        <div class="metric-number">11K</div>
+                                        <div class="metric-label">Cross-Sector Leaders</div>
+                                        <div class="metric-description">Building movements for change</div>
+                                    </div>
                                 </div>
-                                <div class="carousel-card">
-                                    <div class="metric-number">$40M</div>
-                                    <div class="metric-label">Pro-Bono Value</div>
-                                    <div class="metric-description">Technology and consulting expertise deployed for social good</div>
-                                </div>
-                                <div class="carousel-card">
-                                    <div class="metric-number">188</div>
-                                    <div class="metric-label">Partnerships</div>
-                                    <div class="metric-description">Cross-sector collaborations driving systemic change</div>
-                                </div>
-                                <div class="carousel-card">
-                                    <div class="metric-number">11K</div>
-                                    <div class="metric-label">Cross-Sector Leaders</div>
-                                    <div class="metric-description">Engaged in building movements for social innovation</div>
+                                <div class="carousel-track">
+                                    <div class="carousel-card">
+                                        <div class="metric-number">20M</div>
+                                        <div class="metric-label">Volunteering Hours</div>
+                                        <div class="metric-description">Mobilized across global workforce</div>
+                                    </div>
+                                    <div class="carousel-card">
+                                        <div class="metric-number">$40M</div>
+                                        <div class="metric-label">Pro-Bono Value</div>
+                                        <div class="metric-description">Technology expertise for social good</div>
+                                    </div>
+                                    <div class="carousel-card">
+                                        <div class="metric-number">188</div>
+                                        <div class="metric-label">Partnerships</div>
+                                        <div class="metric-description">Cross-sector collaborations</div>
+                                    </div>
+                                    <div class="carousel-card">
+                                        <div class="metric-number">11K</div>
+                                        <div class="metric-label">Cross-Sector Leaders</div>
+                                        <div class="metric-description">Building movements for change</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -999,22 +1103,42 @@
                     <div class="content-section">
                         <h2 class="section-title">Cross-Domain Expertise</h2>
                         <div class="carousel-container">
-                            <div class="carousel auto-scroll">
-                                <div class="carousel-card">
-                                    <div class="metric-label">Business</div>
-                                    <div class="metric-description">Strategic planning, M&A, digital transformation leadership</div>
+                            <div class="carousel">
+                                <div class="carousel-track">
+                                    <div class="carousel-card">
+                                        <div class="metric-label">Business</div>
+                                        <div class="metric-description">Strategic planning, M&A, digital transformation</div>
+                                    </div>
+                                    <div class="carousel-card">
+                                        <div class="metric-label">Talent</div>
+                                        <div class="metric-description">Workforce development, DEI, future of work</div>
+                                    </div>
+                                    <div class="carousel-card">
+                                        <div class="metric-label">Technology</div>
+                                        <div class="metric-description">AI for social good, digital inclusion</div>
+                                    </div>
+                                    <div class="carousel-card">
+                                        <div class="metric-label">Sustainability & ESG</div>
+                                        <div class="metric-description">Climate action, stakeholder capitalism</div>
+                                    </div>
                                 </div>
-                                <div class="carousel-card">
-                                    <div class="metric-label">Talent</div>
-                                    <div class="metric-description">Workforce development, DEI, future of work innovation</div>
-                                </div>
-                                <div class="carousel-card">
-                                    <div class="metric-label">Technology</div>
-                                    <div class="metric-description">AI for social good, digital inclusion, innovation ecosystems</div>
-                                </div>
-                                <div class="carousel-card">
-                                    <div class="metric-label">Sustainability & ESG</div>
-                                    <div class="metric-description">Climate action, net zero strategies, stakeholder capitalism</div>
+                                <div class="carousel-track">
+                                    <div class="carousel-card">
+                                        <div class="metric-label">Business</div>
+                                        <div class="metric-description">Strategic planning, M&A, digital transformation</div>
+                                    </div>
+                                    <div class="carousel-card">
+                                        <div class="metric-label">Talent</div>
+                                        <div class="metric-description">Workforce development, DEI, future of work</div>
+                                    </div>
+                                    <div class="carousel-card">
+                                        <div class="metric-label">Technology</div>
+                                        <div class="metric-description">AI for social good, digital inclusion</div>
+                                    </div>
+                                    <div class="carousel-card">
+                                        <div class="metric-label">Sustainability & ESG</div>
+                                        <div class="metric-description">Climate action, stakeholder capitalism</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1025,7 +1149,7 @@
             <!-- ADVISOR SECTION -->
             <section class="persona-section">
                 <div class="persona-inner">
-                    <div class="hero">
+                    <div class="hero advisor-hero">
                         <div class="hero-content">
                             <div class="tagline">Grassroots Impact. Population Scale.</div>
                             <h1>Advisor</h1>
@@ -1046,8 +1170,7 @@
                         </p>
                         <p class="section-description">
                             A Charles H. Moore 'Charlie Award' winner, Balaji's extensive board and advisory service include the World Economic Forum, 
-                            U.S. Chamber of Commerce Foundation, Chief Executives for Corporate Purpose, Women Business Collaborative and Commission on Asian Philanthropy. 
-                            His public engagements span the United Nations, White House, Stanford, Harvard, Wharton, NYU, Duke, SXSW, and major global forums.
+                            U.S. Chamber of Commerce Foundation, Chief Executives for Corporate Purpose, Women Business Collaborative and Commission on Asian Philanthropy.
                         </p>
                         <p class="section-description">
                             Passionate about Asia's promise as a model for the world, he serves as a Board Director of a $30M impact fund fostering livelihoods 
@@ -1070,33 +1193,28 @@
                     <div class="content-section">
                         <h2 class="section-title">Expertise</h2>
                         <div class="carousel-container">
-                            <div class="carousel auto-scroll">
-                                <div class="carousel-card">
-                                    <div class="metric-label">Purposeful Business</div>
+                            <div class="carousel">
+                                <div class="carousel-track">
+                                    <div class="carousel-card"><div class="metric-label">Purposeful Business</div></div>
+                                    <div class="carousel-card"><div class="metric-label">Strategic Philanthropy</div></div>
+                                    <div class="carousel-card"><div class="metric-label">Social Impact</div></div>
+                                    <div class="carousel-card"><div class="metric-label">Leadership & Strategy</div></div>
+                                    <div class="carousel-card"><div class="metric-label">Board Governance</div></div>
+                                    <div class="carousel-card"><div class="metric-label">Workforce Effectiveness</div></div>
+                                    <div class="carousel-card"><div class="metric-label">Digital Transformation</div></div>
+                                    <div class="carousel-card"><div class="metric-label">Sustainability & ESG</div></div>
+                                    <div class="carousel-card"><div class="metric-label">Diversity & Inclusion</div></div>
                                 </div>
-                                <div class="carousel-card">
-                                    <div class="metric-label">Strategic Philanthropy</div>
-                                </div>
-                                <div class="carousel-card">
-                                    <div class="metric-label">Social Impact</div>
-                                </div>
-                                <div class="carousel-card">
-                                    <div class="metric-label">Leadership & Strategy</div>
-                                </div>
-                                <div class="carousel-card">
-                                    <div class="metric-label">Board, Governance & Executive Engagement</div>
-                                </div>
-                                <div class="carousel-card">
-                                    <div class="metric-label">Workforce Effectiveness & Future of Work</div>
-                                </div>
-                                <div class="carousel-card">
-                                    <div class="metric-label">Digital Transformation</div>
-                                </div>
-                                <div class="carousel-card">
-                                    <div class="metric-label">Sustainability & ESG</div>
-                                </div>
-                                <div class="carousel-card">
-                                    <div class="metric-label">Diversity, Equity & Inclusion</div>
+                                <div class="carousel-track">
+                                    <div class="carousel-card"><div class="metric-label">Purposeful Business</div></div>
+                                    <div class="carousel-card"><div class="metric-label">Strategic Philanthropy</div></div>
+                                    <div class="carousel-card"><div class="metric-label">Social Impact</div></div>
+                                    <div class="carousel-card"><div class="metric-label">Leadership & Strategy</div></div>
+                                    <div class="carousel-card"><div class="metric-label">Board Governance</div></div>
+                                    <div class="carousel-card"><div class="metric-label">Workforce Effectiveness</div></div>
+                                    <div class="carousel-card"><div class="metric-label">Digital Transformation</div></div>
+                                    <div class="carousel-card"><div class="metric-label">Sustainability & ESG</div></div>
+                                    <div class="carousel-card"><div class="metric-label">Diversity & Inclusion</div></div>
                                 </div>
                             </div>
                         </div>
@@ -1106,30 +1224,58 @@
                     <div class="content-section">
                         <h2 class="section-title">Case Studies</h2>
                         <div class="carousel-container">
-                            <div class="carousel auto-scroll">
-                                <div class="carousel-card">
-                                    <div class="metric-label">WEF: Closing the Skills Gap</div>
-                                    <div class="metric-description">17.2M reskilled, Education, Gender & Work – global framework development</div>
+                            <div class="carousel">
+                                <div class="carousel-track">
+                                    <div class="carousel-card">
+                                        <div class="metric-label">WEF: Closing the Skills Gap</div>
+                                        <div class="metric-description">17.2M reskilled, global framework development</div>
+                                    </div>
+                                    <div class="carousel-card">
+                                        <div class="metric-label">Commission for Asian Philanthropy</div>
+                                        <div class="metric-description">Elevating impact for 60% of world's population</div>
+                                    </div>
+                                    <div class="carousel-card">
+                                        <div class="metric-label">CECP Integration</div>
+                                        <div class="metric-description">Purpose across 250+ companies at scale</div>
+                                    </div>
+                                    <div class="carousel-card">
+                                        <div class="metric-label">US Chamber: Talent Pipeline</div>
+                                        <div class="metric-description">Education & training policies</div>
+                                    </div>
+                                    <div class="carousel-card">
+                                        <div class="metric-label">Business as Force for Good</div>
+                                        <div class="metric-description">US Chamber Foundation leadership</div>
+                                    </div>
+                                    <div class="carousel-card">
+                                        <div class="metric-label">Million Women Mentors</div>
+                                        <div class="metric-description">2.7M girls mentored for STEM careers</div>
+                                    </div>
                                 </div>
-                                <div class="carousel-card">
-                                    <div class="metric-label">Commission for Asian Philanthropy</div>
-                                    <div class="metric-description">Elevating Quantity & Quality of Impact for 60% of World's population, Asian Growth Models</div>
-                                </div>
-                                <div class="carousel-card">
-                                    <div class="metric-label">CECP Integration</div>
-                                    <div class="metric-description">Integrating purpose across 250+ companies at enterprise scale</div>
-                                </div>
-                                <div class="carousel-card">
-                                    <div class="metric-label">U.S. Chamber of Commerce</div>
-                                    <div class="metric-description">Talent Pipeline, Education, Employment & Training policies, systems, programs</div>
-                                </div>
-                                <div class="carousel-card">
-                                    <div class="metric-label">U.S. Chamber of Commerce Foundation</div>
-                                    <div class="metric-description">Business as a force for Good</div>
-                                </div>
-                                <div class="carousel-card">
-                                    <div class="metric-label">Million Women Mentors</div>
-                                    <div class="metric-description">2.7 million girls and women mentored for STEM education & careers</div>
+                                <div class="carousel-track">
+                                    <div class="carousel-card">
+                                        <div class="metric-label">WEF: Closing the Skills Gap</div>
+                                        <div class="metric-description">17.2M reskilled, global framework development</div>
+                                    </div>
+                                    <div class="carousel-card">
+                                        <div class="metric-label">Commission for Asian Philanthropy</div>
+                                        <div class="metric-description">Elevating impact for 60% of world's population</div>
+                                    </div>
+                                    <div class="carousel-card">
+                                        <div class="metric-label">CECP Integration</div>
+                                        <div class="metric-description">Purpose across 250+ companies at scale</div>
+                                    </div>
+                                    <div class="carousel-card">
+                                        <div class="metric-label">US Chamber: Talent Pipeline</div>
+                                        <div class="metric-description">Education & training policies</div>
+                                    </div>
+                                    <div class="carousel-card">
+                                        <div class="metric-label">Business as Force for Good</div>
+                                        <div class="metric-description">US Chamber Foundation leadership</div>
+                                    </div>
+                                    <div class="carousel-card">
+                                        <div class="metric-label">Million Women Mentors</div>
+                                        <div class="metric-description">2.7M girls mentored for STEM careers</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1140,7 +1286,7 @@
             <!-- SPEAKER SECTION -->
             <section class="persona-section">
                 <div class="persona-inner">
-                    <div class="hero">
+                    <div class="hero speaker-hero">
                         <div class="hero-content">
                             <div class="tagline">Keynote Speaker</div>
                             <h1>Speaker</h1>
@@ -1153,22 +1299,42 @@
                     <div class="content-section">
                         <h2 class="section-title">Speaking Highlights</h2>
                         <div class="carousel-container">
-                            <div class="carousel auto-scroll">
-                                <div class="carousel-card">
-                                    <div class="metric-label">World Economic Forum</div>
-                                    <div class="metric-description">Sustainable Development Impact Summit</div>
+                            <div class="carousel">
+                                <div class="carousel-track">
+                                    <div class="carousel-card">
+                                        <div class="metric-label">World Economic Forum</div>
+                                        <div class="metric-description">Sustainable Development Impact Summit</div>
+                                    </div>
+                                    <div class="carousel-card">
+                                        <div class="metric-label">US Chamber of Commerce</div>
+                                        <div class="metric-description">Business Solves Summit</div>
+                                    </div>
+                                    <div class="carousel-card">
+                                        <div class="metric-label">CECP Summit</div>
+                                        <div class="metric-description">Purpose-Driven Leadership</div>
+                                    </div>
+                                    <div class="carousel-card">
+                                        <div class="metric-label">ASIC Bangkok</div>
+                                        <div class="metric-description">Conference on Social Impact</div>
+                                    </div>
                                 </div>
-                                <div class="carousel-card">
-                                    <div class="metric-label">US Chamber of Commerce</div>
-                                    <div class="metric-description">Business Solves Summit</div>
-                                </div>
-                                <div class="carousel-card">
-                                    <div class="metric-label">CECP Summit</div>
-                                    <div class="metric-description">Purpose-Driven Leadership</div>
-                                </div>
-                                <div class="carousel-card">
-                                    <div class="metric-label">ASIC Bangkok</div>
-                                    <div class="metric-description">Conference on Social Impact</div>
+                                <div class="carousel-track">
+                                    <div class="carousel-card">
+                                        <div class="metric-label">World Economic Forum</div>
+                                        <div class="metric-description">Sustainable Development Impact Summit</div>
+                                    </div>
+                                    <div class="carousel-card">
+                                        <div class="metric-label">US Chamber of Commerce</div>
+                                        <div class="metric-description">Business Solves Summit</div>
+                                    </div>
+                                    <div class="carousel-card">
+                                        <div class="metric-label">CECP Summit</div>
+                                        <div class="metric-description">Purpose-Driven Leadership</div>
+                                    </div>
+                                    <div class="carousel-card">
+                                        <div class="metric-label">ASIC Bangkok</div>
+                                        <div class="metric-description">Conference on Social Impact</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1178,18 +1344,18 @@
                     <div class="content-section">
                         <h2 class="section-title">Podcast Highlights</h2>
                         <div class="carousel-container">
-                            <div class="carousel auto-scroll">
-                                <div class="carousel-card">
-                                    <div class="metric-label">Brand on Purpose</div>
+                            <div class="carousel">
+                                <div class="carousel-track">
+                                    <div class="carousel-card"><div class="metric-label">Brand on Purpose</div></div>
+                                    <div class="carousel-card"><div class="metric-label">Purpose360</div></div>
+                                    <div class="carousel-card"><div class="metric-label">Purpose Inc</div></div>
+                                    <div class="carousel-card"><div class="metric-label">Common Impact</div></div>
                                 </div>
-                                <div class="carousel-card">
-                                    <div class="metric-label">Purpose360</div>
-                                </div>
-                                <div class="carousel-card">
-                                    <div class="metric-label">Purpose Inc</div>
-                                </div>
-                                <div class="carousel-card">
-                                    <div class="metric-label">Common Impact</div>
+                                <div class="carousel-track">
+                                    <div class="carousel-card"><div class="metric-label">Brand on Purpose</div></div>
+                                    <div class="carousel-card"><div class="metric-label">Purpose360</div></div>
+                                    <div class="carousel-card"><div class="metric-label">Purpose Inc</div></div>
+                                    <div class="carousel-card"><div class="metric-label">Common Impact</div></div>
                                 </div>
                             </div>
                         </div>
@@ -1267,7 +1433,7 @@
             <!-- COACH SECTION -->
             <section class="persona-section">
                 <div class="persona-inner">
-                    <div class="hero">
+                    <div class="hero coach-hero">
                         <div class="hero-content">
                             <div class="tagline">Purpose. Clarity. Alignment. Velocity.</div>
                             <h1>Coach</h1>
@@ -1484,29 +1650,6 @@
             alert('Thank you for your message! I\'ll get back to you soon.');
             contactForm.reset();
             modalOverlay.classList.remove('active');
-        });
-        
-        // AUTO-SCROLL CAROUSELS
-        document.querySelectorAll('.carousel.auto-scroll').forEach(carousel => {
-            let scrollAmount = 0;
-            const scrollSpeed = 1;
-            const scrollInterval = 30;
-            
-            const autoScroll = setInterval(() => {
-                if (carousel.scrollLeft >= (carousel.scrollWidth - carousel.clientWidth)) {
-                    carousel.scrollLeft = 0;
-                } else {
-                    carousel.scrollLeft += scrollSpeed;
-                }
-            }, scrollInterval);
-            
-            carousel.addEventListener('mouseenter', () => {
-                clearInterval(autoScroll);
-            });
-            
-            carousel.addEventListener('touchstart', () => {
-                clearInterval(autoScroll);
-            });
         });
     </script>
 </body>
