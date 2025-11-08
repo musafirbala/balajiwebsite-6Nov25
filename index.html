@@ -37,26 +37,6 @@
       "sameAs": [
         "https://www.linkedin.com/in/balajiganapathy",
         "https://twitter.com/balajiganapathy"
-      ],
-      "alumniOf": [
-        {"@type": "EducationalOrganization", "name": "XLRI Jamshedpur"},
-        {"@type": "EducationalOrganization", "name": "College of Engineering Trivandrum"}
-      ],
-      "award": [
-        "Charles H. Moore Charlie Award - Chief Executives for Corporate Purpose",
-        "Male Champion of Change Award - Million Women Mentors"
-      ],
-      "knowsAbout": [
-        "Social Impact",
-        "Corporate Social Responsibility",
-        "ESG Strategy",
-        "Sustainability",
-        "Purpose-Driven Leadership",
-        "Board Governance",
-        "Strategic Philanthropy",
-        "Workforce Transformation",
-        "Digital Innovation",
-        "Impact Investing"
       ]
     }
     </script>
@@ -311,19 +291,19 @@
         }
         
         .hero.leader-hero {
-            background-image: url('images/hero-landing.jpg');
+            background-image: url('images/youth-movement.jpg');
         }
         
         .hero.advisor-hero {
-            background-image: url('images/hero-advisor.jpg');
+            background-image: url('images/speaking-panel.jpg');
         }
         
         .hero.speaker-hero {
-            background-image: url('images/hero-speaker.jpg');
+            background-image: url('images/field-engagement.jpg');
         }
         
         .hero.coach-hero {
-            background-image: url('images/hero-coach.jpg');
+            background-image: url('images/team-collaboration.jpg');
         }
         
         .hero-content {
@@ -383,7 +363,7 @@
             font-weight: 700;
             margin-bottom: 1.5rem;
             color: var(--primary);
-            text-align: center;
+            text-align: left;
         }
         
         body.dark-mode .section-title {
@@ -393,10 +373,10 @@
         .section-description {
             font-size: clamp(1rem, 2vw, 1.1rem);
             line-height: 1.8;
-            max-width: 900px;
-            margin: 0 auto 3rem;
-            text-align: center;
-            padding: 0 1rem;
+            max-width: 1000px;
+            margin: 0 0 3rem 0;
+            text-align: left;
+            padding: 0;
         }
         
         /* UPGRADED FEATURE CAROUSEL */
@@ -489,48 +469,27 @@
             color: #999;
         }
         
-        /* LOGO GRID WITH SVG ICONS */
-        .logo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 2rem;
-            margin: 3rem auto;
-            padding: 3rem 2rem;
-            background: var(--bg-gray);
-            border-radius: 12px;
-            max-width: 1200px;
-        }
-        
-        body.dark-mode .logo-grid {
-            background: var(--dm-card);
-        }
-        
-        .logo-item {
+        /* PUBLIC ENGAGEMENT - UPDATED */
+        .org-list {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 1rem;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 0 3rem 0;
+        }
+        
+        .org-name {
             font-size: 0.85rem;
-            color: var(--text-dark);
-            font-weight: 600;
-            transition: all var(--transition-speed);
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--primary);
+            line-height: 1.4;
+            flex: 0 1 auto;
         }
         
-        body.dark-mode .logo-item {
-            color: var(--dm-text);
-        }
-        
-        .logo-icon {
-            width: 48px;
-            height: 48px;
-            margin-bottom: 0.5rem;
-            fill: #1A1A1A;
-        }
-        
-        body.dark-mode .logo-icon {
-            fill: #E5E5E5;
+        body.dark-mode .org-name {
+            color: var(--accent-teal);
         }
         
         /* VIDEO CONTAINER - RESPONSIVE */
@@ -547,6 +506,7 @@
             padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
+            background: #000;
         }
         
         .video-wrapper video {
@@ -555,6 +515,115 @@
             left: 0;
             width: 100%;
             height: 100%;
+            display: block;
+        }
+        
+        /* PODCAST AUDIO CARDS */
+        .podcast-card {
+            min-width: 380px;
+            max-width: 380px;
+            flex: 0 0 auto;
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all var(--transition-speed);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        body.dark-mode .podcast-card {
+            background: var(--dm-card);
+            border-color: var(--dm-border);
+        }
+        
+        .podcast-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .podcast-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        body.dark-mode .podcast-title {
+            color: var(--accent-teal);
+        }
+        
+        .podcast-description {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        body.dark-mode .podcast-description {
+            color: #999;
+        }
+        
+        .audio-player {
+            width: 100%;
+            margin-top: 1rem;
+        }
+        
+        /* TOPIC CARD DESIGN */
+        .topic-card {
+            min-width: 380px;
+            max-width: 380px;
+            flex: 0 0 auto;
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all var(--transition-speed);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        body.dark-mode .topic-card {
+            background: var(--dm-card);
+            border-color: var(--dm-border);
+        }
+        
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .topic-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        body.dark-mode .topic-title {
+            color: var(--accent-teal);
+        }
+        
+        .topic-list {
+            list-style: none;
+        }
+        
+        .topic-list li {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.8;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        body.dark-mode .topic-list li {
+            color: #999;
+        }
+        
+        .topic-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent-teal);
+            font-weight: bold;
         }
         
         .image-gallery {
@@ -847,15 +916,19 @@
                 gap: 1rem;
             }
             
-            .feature-card {
+            .feature-card,
+            .podcast-card,
+            .topic-card {
                 min-width: calc(100vw - 4rem);
                 max-width: calc(100vw - 4rem);
             }
             
-            .logo-grid {
-                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-                gap: 1.5rem;
-                padding: 2rem 1rem;
+            .section-title {
+                text-align: left;
+            }
+            
+            .org-list {
+                gap: 1rem;
             }
         }
         
@@ -985,66 +1058,24 @@
                         </p>
                     </div>
 
-                    <!-- PUBLIC ENGAGEMENT - MOVED UP -->
+                    <!-- PUBLIC ENGAGEMENT - UPDATED -->
                     <div class="content-section">
                         <h2 class="section-title">Public Engagement</h2>
-                        <div class="logo-grid">
-                            <div class="logo-item">
-                                <svg class="logo-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
-                                <span>World Economic Forum</span>
-                            </div>
-                            <div class="logo-item">
-                                <svg class="logo-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18"/></svg>
-                                <span>US Chamber Foundation</span>
-                            </div>
-                            <div class="logo-item">
-                                <svg class="logo-icon" viewBox="0 0 24 24"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/></svg>
-                                <span>United Nations</span>
-                            </div>
-                            <div class="logo-item">
-                                <svg class="logo-icon" viewBox="0 0 24 24"><polygon points="12,2 15,10 23,10 17,15 19,23 12,18 5,23 7,15 1,10 9,10"/></svg>
-                                <span>CECP</span>
-                            </div>
-                            <div class="logo-item">
-                                <svg class="logo-icon" viewBox="0 0 24 24"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/></svg>
-                                <span>White House</span>
-                            </div>
-                            <div class="logo-item">
-                                <svg class="logo-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
-                                <span>Government of India</span>
-                            </div>
-                            <div class="logo-item">
-                                <svg class="logo-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18"/></svg>
-                                <span>Stanford</span>
-                            </div>
-                            <div class="logo-item">
-                                <svg class="logo-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18"/></svg>
-                                <span>Harvard</span>
-                            </div>
-                            <div class="logo-item">
-                                <svg class="logo-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18"/></svg>
-                                <span>Wharton</span>
-                            </div>
-                            <div class="logo-item">
-                                <svg class="logo-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18"/></svg>
-                                <span>NYU</span>
-                            </div>
-                            <div class="logo-item">
-                                <svg class="logo-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18"/></svg>
-                                <span>Duke University</span>
-                            </div>
-                            <div class="logo-item">
-                                <svg class="logo-icon" viewBox="0 0 24 24"><polygon points="12,2 15,10 23,10 17,15 19,23 12,18 5,23 7,15 1,10 9,10"/></svg>
-                                <span>SXSW</span>
-                            </div>
-                            <div class="logo-item">
-                                <svg class="logo-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
-                                <span>AVPN</span>
-                            </div>
-                            <div class="logo-item">
-                                <svg class="logo-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18"/></svg>
-                                <span>HKJC Institute</span>
-                            </div>
+                        <div class="org-list">
+                            <div class="org-name">World Economic Forum</div>
+                            <div class="org-name">US Chamber Foundation</div>
+                            <div class="org-name">United Nations</div>
+                            <div class="org-name">CECP</div>
+                            <div class="org-name">White House</div>
+                            <div class="org-name">Government of India</div>
+                            <div class="org-name">Stanford</div>
+                            <div class="org-name">Harvard</div>
+                            <div class="org-name">Wharton</div>
+                            <div class="org-name">NYU</div>
+                            <div class="org-name">Duke University</div>
+                            <div class="org-name">SXSW</div>
+                            <div class="org-name">AVPN</div>
+                            <div class="org-name">HKJC Institute</div>
                         </div>
                     </div>
 
@@ -1053,8 +1084,8 @@
                         <h2 class="section-title">Purpose in Action</h2>
                         <div class="video-container">
                             <div class="video-wrapper">
-                                <video controls preload="metadata">
-                                    <source src="videos/Balaji-Journey.mp4" type="video/mp4">
+                                <video controls preload="none">
+                                    <source src="videos/purpose-tech.mp4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                             </div>
@@ -1068,28 +1099,28 @@
                             <div class="carousel">
                                 <div class="carousel-track">
                                     <div class="feature-card">
-                                        <img src="images/goit-STEM.jpeg" alt="STEM Education" class="feature-image">
+                                        <img src="images/youth-movement.jpg" alt="STEM Education" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">STEM & CS Education</div>
                                             <div class="feature-description">2.5M students across 48 countries. 50%+ girls, 70%+ underrepresented minorities. 21st century skills including computational thinking and digital fluency.</div>
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/bridgeIT-10y.jpg" alt="Digital Entrepreneurship" class="feature-image">
+                                        <img src="images/women-entrepreneurship.jpg" alt="Digital Entrepreneurship" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">Digital Entrepreneurship</div>
                                             <div class="feature-description">6,000+ villages across 10 states in India. 90% women entrepreneurs. INR 22K average earnings, driving economic independence and community transformation.</div>
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/yep-india.jpeg" alt="Youth Employment" class="feature-image">
+                                        <img src="images/community-india.jpg" alt="Youth Employment" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">Youth Employment</div>
                                             <div class="feature-description">158,000 youth across 36 states in India. INR 3 lac average earnings. Skills training, career pathways, and sustainable livelihoods for underserved communities.</div>
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/lass-workshop.jpg" alt="Literacy to Livelihood" class="feature-image">
+                                        <img src="images/field-engagement.jpg" alt="Literacy to Livelihood" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">Literacy to Livelihood</div>
                                             <div class="feature-description">3 million marginalized individuals across 10 states. Integrated programs combining basic literacy, digital skills, and vocational training for economic mobility.</div>
@@ -1098,28 +1129,28 @@
                                 </div>
                                 <div class="carousel-track">
                                     <div class="feature-card">
-                                        <img src="images/goit-STEM.jpeg" alt="STEM Education" class="feature-image">
+                                        <img src="images/youth-movement.jpg" alt="STEM Education" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">STEM & CS Education</div>
                                             <div class="feature-description">2.5M students across 48 countries. 50%+ girls, 70%+ underrepresented minorities. 21st century skills including computational thinking and digital fluency.</div>
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/bridgeIT-10y.jpg" alt="Digital Entrepreneurship" class="feature-image">
+                                        <img src="images/women-entrepreneurship.jpg" alt="Digital Entrepreneurship" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">Digital Entrepreneurship</div>
                                             <div class="feature-description">6,000+ villages across 10 states in India. 90% women entrepreneurs. INR 22K average earnings, driving economic independence and community transformation.</div>
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/yep-india.jpeg" alt="Youth Employment" class="feature-image">
+                                        <img src="images/community-india.jpg" alt="Youth Employment" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">Youth Employment</div>
                                             <div class="feature-description">158,000 youth across 36 states in India. INR 3 lac average earnings. Skills training, career pathways, and sustainable livelihoods for underserved communities.</div>
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/lass-workshop.jpg" alt="Literacy to Livelihood" class="feature-image">
+                                        <img src="images/field-engagement.jpg" alt="Literacy to Livelihood" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">Literacy to Livelihood</div>
                                             <div class="feature-description">3 million marginalized individuals across 10 states. Integrated programs combining basic literacy, digital skills, and vocational training for economic mobility.</div>
@@ -1137,28 +1168,28 @@
                             <div class="carousel">
                                 <div class="carousel-track">
                                     <div class="feature-card">
-                                        <img src="images/hope-hero.jpg" alt="Volunteering" class="feature-image">
+                                        <img src="images/team-collaboration.jpg" alt="Volunteering" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">20M Volunteering Hours</div>
                                             <div class="feature-description">Mobilized 601,000 employees across global workforce. Skills-based volunteering, mentorship programs, and community service creating lasting impact.</div>
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/t4h-kidsrights.jpg" alt="Pro Bono" class="feature-image">
+                                        <img src="images/speaking-panel.jpg" alt="Pro Bono" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">$40M Pro-Bono Value</div>
                                             <div class="feature-description">Technology expertise for social good. Digital transformation, innovation labs, and capacity building for nonprofits and social enterprises.</div>
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/cgi-clinton.jpg" alt="Partnerships" class="feature-image">
+                                        <img src="images/field-engagement.jpg" alt="Partnerships" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">188 Partnerships</div>
                                             <div class="feature-description">Cross-sector collaborations spanning corporations, foundations, governments, NGOs, and multilateral organizations for systemic change.</div>
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/sitf-gsts.jpg" alt="Cross-Sector Leaders" class="feature-image">
+                                        <img src="images/community-india.jpg" alt="Cross-Sector Leaders" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">11K Cross-Sector Leaders</div>
                                             <div class="feature-description">Building movements for change. Convening leaders from business, government, academia, and civil society to drive policy and advocacy.</div>
@@ -1167,28 +1198,28 @@
                                 </div>
                                 <div class="carousel-track">
                                     <div class="feature-card">
-                                        <img src="images/hope-hero.jpg" alt="Volunteering" class="feature-image">
+                                        <img src="images/team-collaboration.jpg" alt="Volunteering" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">20M Volunteering Hours</div>
                                             <div class="feature-description">Mobilized 601,000 employees across global workforce. Skills-based volunteering, mentorship programs, and community service creating lasting impact.</div>
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/t4h-kidsrights.jpg" alt="Pro Bono" class="feature-image">
+                                        <img src="images/speaking-panel.jpg" alt="Pro Bono" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">$40M Pro-Bono Value</div>
                                             <div class="feature-description">Technology expertise for social good. Digital transformation, innovation labs, and capacity building for nonprofits and social enterprises.</div>
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/cgi-clinton.jpg" alt="Partnerships" class="feature-image">
+                                        <img src="images/field-engagement.jpg" alt="Partnerships" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">188 Partnerships</div>
                                             <div class="feature-description">Cross-sector collaborations spanning corporations, foundations, governments, NGOs, and multilateral organizations for systemic change.</div>
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/sitf-gsts.jpg" alt="Cross-Sector Leaders" class="feature-image">
+                                        <img src="images/community-india.jpg" alt="Cross-Sector Leaders" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">11K Cross-Sector Leaders</div>
                                             <div class="feature-description">Building movements for change. Convening leaders from business, government, academia, and civil society to drive policy and advocacy.</div>
@@ -1199,81 +1230,71 @@
                         </div>
                     </div>
 
-                    <!-- PARTNERSHIPS -->
+                    <!-- STRATEGIC PARTNERSHIPS -->
                     <div class="content-section">
                         <h2 class="section-title">Strategic Partnerships</h2>
-                        <div class="logo-grid">
-                            <div class="logo-item">
-                                <svg class="logo-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                                <span>Red Cross</span>
-                            </div>
-                            <div class="logo-item">
-                                <svg class="logo-icon" viewBox="0 0 24 24"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/></svg>
-                                <span>Feeding America</span>
-                            </div>
-                            <div class="logo-item">
-                                <svg class="logo-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
-                                <span>American Heart Association</span>
-                            </div>
-                            <div class="logo-item">
-                                <svg class="logo-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18"/></svg>
-                                <span>Toronto District School Board</span>
-                            </div>
-                            <div class="logo-item">
-                                <svg class="logo-icon" viewBox="0 0 24 24"><polygon points="12,2 15,10 23,10 17,15 19,23 12,18 5,23 7,15 1,10 9,10"/></svg>
-                                <span>Points of Light</span>
-                            </div>
-                            <div class="logo-item">
-                                <svg class="logo-icon" viewBox="0 0 24 24"><polygon points="12,2 15,10 23,10 17,15 19,23 12,18 5,23 7,15 1,10 9,10"/></svg>
-                                <span>CECP</span>
-                            </div>
-                            <div class="logo-item">
-                                <svg class="logo-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18"/></svg>
-                                <span>NPower</span>
-                            </div>
-                            <div class="logo-item">
-                                <svg class="logo-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
-                                <span>Pyxera Global</span>
-                            </div>
-                            <div class="logo-item">
-                                <svg class="logo-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18"/></svg>
-                                <span>NationSwell</span>
-                            </div>
-                            <div class="logo-item">
-                                <svg class="logo-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
-                                <span>Tata Trusts</span>
-                            </div>
-                            <div class="logo-item">
-                                <svg class="logo-icon" viewBox="0 0 24 24"><polygon points="12,2 15,10 23,10 17,15 19,23 12,18 5,23 7,15 1,10 9,10"/></svg>
-                                <span>American India Foundation</span>
-                            </div>
-                            <div class="logo-item">
-                                <svg class="logo-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18"/></svg>
-                                <span>Pratham</span>
-                            </div>
-                            <div class="logo-item">
-                                <svg class="logo-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18"/></svg>
-                                <span>ACM</span>
-                            </div>
-                            <div class="logo-item">
-                                <svg class="logo-icon" viewBox="0 0 24 24"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/></svg>
-                                <span>UNICEF</span>
-                            </div>
-                            <div class="logo-item">
-                                <svg class="logo-icon" viewBox="0 0 24 24"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/></svg>
-                                <span>UN Women</span>
-                            </div>
-                            <div class="logo-item">
-                                <svg class="logo-icon" viewBox="0 0 24 24"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/></svg>
-                                <span>UNHCR</span>
-                            </div>
-                            <div class="logo-item">
-                                <svg class="logo-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
-                                <span>Sattva</span>
-                            </div>
-                            <div class="logo-item">
-                                <svg class="logo-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
-                                <span>Give India</span>
+                        <div class="carousel-container">
+                            <div class="carousel">
+                                <div class="carousel-track">
+                                    <div class="feature-card">
+                                        <img src="images/speaking-panel.jpg" alt="Red Cross" class="feature-image">
+                                        <div class="feature-content">
+                                            <div class="feature-title">Red Cross & Feeding America</div>
+                                            <div class="feature-description">Emergency response and food security. Disaster relief, humanitarian aid, and community resilience programs across North America.</div>
+                                        </div>
+                                    </div>
+                                    <div class="feature-card">
+                                        <img src="images/field-engagement.jpg" alt="Education Partners" class="feature-image">
+                                        <div class="feature-content">
+                                            <div class="feature-title">Education Institutions</div>
+                                            <div class="feature-description">Stanford, Harvard, Wharton, NYU, Duke. Partnerships for research, curriculum development, and talent pipeline programs.</div>
+                                        </div>
+                                    </div>
+                                    <div class="feature-card">
+                                        <img src="images/team-collaboration.jpg" alt="Global Organizations" class="feature-image">
+                                        <div class="feature-content">
+                                            <div class="feature-title">UN & Multilaterals</div>
+                                            <div class="feature-description">UNICEF, UN Women, UNHCR. Collaborative efforts on sustainable development, gender equality, and humanitarian support.</div>
+                                        </div>
+                                    </div>
+                                    <div class="feature-card">
+                                        <img src="images/youth-movement.jpg" alt="Impact Organizations" class="feature-image">
+                                        <div class="feature-content">
+                                            <div class="feature-title">Social Impact Networks</div>
+                                            <div class="feature-description">CECP, Points of Light, Pyxera Global. Movement building for corporate social responsibility and community impact.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-track">
+                                    <div class="feature-card">
+                                        <img src="images/speaking-panel.jpg" alt="Red Cross" class="feature-image">
+                                        <div class="feature-content">
+                                            <div class="feature-title">Red Cross & Feeding America</div>
+                                            <div class="feature-description">Emergency response and food security. Disaster relief, humanitarian aid, and community resilience programs across North America.</div>
+                                        </div>
+                                    </div>
+                                    <div class="feature-card">
+                                        <img src="images/field-engagement.jpg" alt="Education Partners" class="feature-image">
+                                        <div class="feature-content">
+                                            <div class="feature-title">Education Institutions</div>
+                                            <div class="feature-description">Stanford, Harvard, Wharton, NYU, Duke. Partnerships for research, curriculum development, and talent pipeline programs.</div>
+                                        </div>
+                                    </div>
+                                    <div class="feature-card">
+                                        <img src="images/team-collaboration.jpg" alt="Global Organizations" class="feature-image">
+                                        <div class="feature-content">
+                                            <div class="feature-title">UN & Multilaterals</div>
+                                            <div class="feature-description">UNICEF, UN Women, UNHCR. Collaborative efforts on sustainable development, gender equality, and humanitarian support.</div>
+                                        </div>
+                                    </div>
+                                    <div class="feature-card">
+                                        <img src="images/youth-movement.jpg" alt="Impact Organizations" class="feature-image">
+                                        <div class="feature-content">
+                                            <div class="feature-title">Social Impact Networks</div>
+                                            <div class="feature-description">CECP, Points of Light, Pyxera Global. Movement building for corporate social responsibility and community impact.</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1285,28 +1306,28 @@
                             <div class="carousel">
                                 <div class="carousel-track">
                                     <div class="feature-card">
-                                        <img src="images/TA-iowa.jpg" alt="Business Strategy" class="feature-image">
+                                        <img src="images/speaking-panel.jpg" alt="Business Strategy" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">Business & Strategy</div>
                                             <div class="feature-description">26 years advising CXOs on $30B+ digital transformation deals. 200+ complex change management efforts. Strategic planning, M&A integration, and organizational design.</div>
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/hero-talent.JPG" alt="Talent & Workforce" class="feature-image">
+                                        <img src="images/team-collaboration.jpg" alt="Talent & Workforce" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">Talent & Workforce</div>
                                             <div class="feature-description">Scaled workforce from 12K to 45K with 80% retention. Workforce effectiveness, DEI leadership, talent development, and future of work transformation.</div>
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/DE-summit.jpg" alt="Technology & Innovation" class="feature-image">
+                                        <img src="images/youth-movement.jpg" alt="Technology & Innovation" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">Technology & Innovation</div>
                                             <div class="feature-description">AI for social good, digital inclusion platforms, innovation labs. Built 800-member R&D team including 100+ Ivy League PhDs across 20+ labs.</div>
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/hero-esg.jpg" alt="Sustainability & ESG" class="feature-image">
+                                        <img src="images/field-engagement.jpg" alt="Sustainability & ESG" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">Sustainability & ESG</div>
                                             <div class="feature-description">80% Scope 1 & 2 reductions against Net Zero SBTi targets. Climate action, stakeholder capitalism, and building Carbon Negative, Social Positive enterprises.</div>
@@ -1315,28 +1336,28 @@
                                 </div>
                                 <div class="carousel-track">
                                     <div class="feature-card">
-                                        <img src="images/TA-iowa.jpg" alt="Business Strategy" class="feature-image">
+                                        <img src="images/speaking-panel.jpg" alt="Business Strategy" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">Business & Strategy</div>
                                             <div class="feature-description">26 years advising CXOs on $30B+ digital transformation deals. 200+ complex change management efforts. Strategic planning, M&A integration, and organizational design.</div>
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/hero-talent.JPG" alt="Talent & Workforce" class="feature-image">
+                                        <img src="images/team-collaboration.jpg" alt="Talent & Workforce" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">Talent & Workforce</div>
                                             <div class="feature-description">Scaled workforce from 12K to 45K with 80% retention. Workforce effectiveness, DEI leadership, talent development, and future of work transformation.</div>
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/DE-summit.jpg" alt="Technology & Innovation" class="feature-image">
+                                        <img src="images/youth-movement.jpg" alt="Technology & Innovation" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">Technology & Innovation</div>
                                             <div class="feature-description">AI for social good, digital inclusion platforms, innovation labs. Built 800-member R&D team including 100+ Ivy League PhDs across 20+ labs.</div>
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/hero-esg.jpg" alt="Sustainability & ESG" class="feature-image">
+                                        <img src="images/field-engagement.jpg" alt="Sustainability & ESG" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">Sustainability & ESG</div>
                                             <div class="feature-description">80% Scope 1 & 2 reductions against Net Zero SBTi targets. Climate action, stakeholder capitalism, and building Carbon Negative, Social Positive enterprises.</div>
@@ -1380,8 +1401,8 @@
                         <h2 class="section-title">Advisory in Action</h2>
                         <div class="video-container">
                             <div class="video-wrapper">
-                                <video controls preload="metadata">
-                                    <source src="videos/Big-Bets-Business-Solves.mp4" type="video/mp4">
+                                <video controls preload="none">
+                                    <source src="videos/advisory-highlights.mp4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                             </div>
@@ -1394,28 +1415,28 @@
                             <div class="carousel">
                                 <div class="carousel-track">
                                     <div class="feature-card">
-                                        <img src="images/speak-cecp.jpg" alt="Purposeful Business" class="feature-image">
+                                        <img src="images/speaking-panel.jpg" alt="Purposeful Business" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">Purposeful Business</div>
                                             <div class="feature-description">Integrating purpose across enterprise. Stakeholder capitalism, ESG strategy, and building organizations that create value for business, employees, community, and shareholders.</div>
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/sitevisit-bihar.jpg" alt="Strategic Philanthropy" class="feature-image">
+                                        <img src="images/field-engagement.jpg" alt="Strategic Philanthropy" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">Strategic Philanthropy</div>
                                             <div class="feature-description">Population-scale impact programs. Partnership models, measurement frameworks, and building movements for sustainable, systemic change across sectors.</div>
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/speak-gsts.jpg" alt="Board Governance" class="feature-image">
+                                        <img src="images/team-collaboration.jpg" alt="Board Governance" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">Board Governance & Leadership</div>
                                             <div class="feature-description">Executive engagement, board strategy, and organizational transformation. Advising C-suite and boards on purpose integration and impact acceleration.</div>
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/us-team.png" alt="Workforce Transformation" class="feature-image">
+                                        <img src="images/youth-movement.jpg" alt="Workforce Transformation" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">Workforce Transformation</div>
                                             <div class="feature-description">Future of work strategies, DEI leadership, and workforce effectiveness. Scaling from 12K to 45K with 80% retention across 75+ nationalities.</div>
@@ -1424,28 +1445,28 @@
                                 </div>
                                 <div class="carousel-track">
                                     <div class="feature-card">
-                                        <img src="images/speak-cecp.jpg" alt="Purposeful Business" class="feature-image">
+                                        <img src="images/speaking-panel.jpg" alt="Purposeful Business" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">Purposeful Business</div>
                                             <div class="feature-description">Integrating purpose across enterprise. Stakeholder capitalism, ESG strategy, and building organizations that create value for business, employees, community, and shareholders.</div>
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/sitevisit-bihar.jpg" alt="Strategic Philanthropy" class="feature-image">
+                                        <img src="images/field-engagement.jpg" alt="Strategic Philanthropy" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">Strategic Philanthropy</div>
                                             <div class="feature-description">Population-scale impact programs. Partnership models, measurement frameworks, and building movements for sustainable, systemic change across sectors.</div>
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/speak-gsts.jpg" alt="Board Governance" class="feature-image">
+                                        <img src="images/team-collaboration.jpg" alt="Board Governance" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">Board Governance & Leadership</div>
                                             <div class="feature-description">Executive engagement, board strategy, and organizational transformation. Advising C-suite and boards on purpose integration and impact acceleration.</div>
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/us-team.png" alt="Workforce Transformation" class="feature-image">
+                                        <img src="images/youth-movement.jpg" alt="Workforce Transformation" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">Workforce Transformation</div>
                                             <div class="feature-description">Future of work strategies, DEI leadership, and workforce effectiveness. Scaling from 12K to 45K with 80% retention across 75+ nationalities.</div>
@@ -1462,42 +1483,42 @@
                             <div class="carousel">
                                 <div class="carousel-track">
                                     <div class="feature-card">
-                                        <img src="images/ctsg-wef.jpg" alt="WEF" class="feature-image">
+                                        <img src="images/speaking-panel.jpg" alt="WEF" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">WEF: Closing the Skills Gap</div>
                                             <div class="feature-description">17.2M people reskilled globally. Led global framework development on education, gender, and work. Published influential white papers on workforce transformation.</div>
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/cap-team.jpg" alt="Asian Philanthropy" class="feature-image">
+                                        <img src="images/field-engagement.jpg" alt="Asian Philanthropy" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">Commission for Asian Philanthropy</div>
                                             <div class="feature-description">Elevating quantity and quality of impact for 60% of world's population. Asian growth models for sustainable development and inclusive prosperity.</div>
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/speak-cecp.jpg" alt="CECP" class="feature-image">
+                                        <img src="images/team-collaboration.jpg" alt="CECP" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">CECP: Purpose Integration</div>
                                             <div class="feature-description">Integrating purpose across 250+ companies at enterprise scale. Stakeholder capitalism, ESG advancement, and community impact measurement.</div>
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/speak-usccf.jpg" alt="Chamber" class="feature-image">
+                                        <img src="images/youth-movement.jpg" alt="Chamber" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">US Chamber: Talent Pipeline</div>
                                             <div class="feature-description">Education, employment, and training policies. Business as a force for good. Advancing workforce development and economic opportunity nationwide.</div>
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/mwm-launch.jpg" alt="MWM" class="feature-image">
+                                        <img src="images/women-entrepreneurship.jpg" alt="MWM" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">Million Women Mentors</div>
                                             <div class="feature-description">2.7M girls and women mentored for STEM education and careers. Vice Chair driving national movement for gender equity in STEM fields.</div>
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/nudge-sitevisit.jpg" alt="Impact Fund" class="feature-image">
+                                        <img src="images/community-india.jpg" alt="Impact Fund" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">$30M Impact Fund</div>
                                             <div class="feature-description">Board Director fostering livelihoods for the next billion 'aspirants'. Impact investing, social entrepreneurship, and inclusive economic development.</div>
@@ -1506,42 +1527,42 @@
                                 </div>
                                 <div class="carousel-track">
                                     <div class="feature-card">
-                                        <img src="images/ctsg-wef.jpg" alt="WEF" class="feature-image">
+                                        <img src="images/speaking-panel.jpg" alt="WEF" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">WEF: Closing the Skills Gap</div>
                                             <div class="feature-description">17.2M people reskilled globally. Led global framework development on education, gender, and work. Published influential white papers on workforce transformation.</div>
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/cap-team.jpg" alt="Asian Philanthropy" class="feature-image">
+                                        <img src="images/field-engagement.jpg" alt="Asian Philanthropy" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">Commission for Asian Philanthropy</div>
                                             <div class="feature-description">Elevating quantity and quality of impact for 60% of world's population. Asian growth models for sustainable development and inclusive prosperity.</div>
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/speak-cecp.jpg" alt="CECP" class="feature-image">
+                                        <img src="images/team-collaboration.jpg" alt="CECP" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">CECP: Purpose Integration</div>
                                             <div class="feature-description">Integrating purpose across 250+ companies at enterprise scale. Stakeholder capitalism, ESG advancement, and community impact measurement.</div>
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/speak-usccf.jpg" alt="Chamber" class="feature-image">
+                                        <img src="images/youth-movement.jpg" alt="Chamber" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">US Chamber: Talent Pipeline</div>
                                             <div class="feature-description">Education, employment, and training policies. Business as a force for good. Advancing workforce development and economic opportunity nationwide.</div>
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/mwm-launch.jpg" alt="MWM" class="feature-image">
+                                        <img src="images/women-entrepreneurship.jpg" alt="MWM" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">Million Women Mentors</div>
                                             <div class="feature-description">2.7M girls and women mentored for STEM education and careers. Vice Chair driving national movement for gender equity in STEM fields.</div>
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/nudge-sitevisit.jpg" alt="Impact Fund" class="feature-image">
+                                        <img src="images/community-india.jpg" alt="Impact Fund" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">$30M Impact Fund</div>
                                             <div class="feature-description">Board Director fostering livelihoods for the next billion 'aspirants'. Impact investing, social entrepreneurship, and inclusive economic development.</div>
@@ -1582,21 +1603,21 @@
                             <div class="carousel">
                                 <div class="carousel-track">
                                     <div class="feature-card">
-                                        <img src="images/hero-advisor.jpg" alt="WEF" class="feature-image">
+                                        <img src="images/speaking-panel.jpg" alt="WEF" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">World Economic Forum</div>
                                             <div class="feature-description">Sustainable Development Impact Summit. Steering Committee on Education, Gender & Work. Presenting frameworks for global skills transformation.</div>
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/speak-usccf-2023.jpeg" alt="US Chamber" class="feature-image">
+                                        <img src="images/field-engagement.jpg" alt="US Chamber" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">US Chamber of Commerce</div>
                                             <div class="feature-description">Business Solves Summit. Keynotes on business as a force for good, talent pipeline development, and public-private partnerships for impact.</div>
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/hero-charlie.jpeg" alt="CECP" class="feature-image">
+                                        <img src="images/team-collaboration.jpg" alt="CECP" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">CECP Summit</div>
                                             <div class="feature-description">Purpose-Driven Leadership for C-suite executives. Integrating stakeholder capitalism and ESG strategy across 250+ leading companies.</div>
@@ -1612,21 +1633,21 @@
                                 </div>
                                 <div class="carousel-track">
                                     <div class="feature-card">
-                                        <img src="images/hero-advisor.jpg" alt="WEF" class="feature-image">
+                                        <img src="images/speaking-panel.jpg" alt="WEF" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">World Economic Forum</div>
                                             <div class="feature-description">Sustainable Development Impact Summit. Steering Committee on Education, Gender & Work. Presenting frameworks for global skills transformation.</div>
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/speak-usccf-2023.jpeg" alt="US Chamber" class="feature-image">
+                                        <img src="images/field-engagement.jpg" alt="US Chamber" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">US Chamber of Commerce</div>
                                             <div class="feature-description">Business Solves Summit. Keynotes on business as a force for good, talent pipeline development, and public-private partnerships for impact.</div>
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/hero-charlie.jpeg" alt="CECP" class="feature-image">
+                                        <img src="images/team-collaboration.jpg" alt="CECP" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">CECP Summit</div>
                                             <div class="feature-description">Purpose-Driven Leadership for C-suite executives. Integrating stakeholder capitalism and ESG strategy across 250+ leading companies.</div>
@@ -1649,63 +1670,71 @@
                         <div class="carousel-container">
                             <div class="carousel">
                                 <div class="carousel-track">
-                                    <div class="feature-card">
-                                        <img src="images/bop-podcast.webp" alt="Podcast" class="feature-image">
-                                        <div class="feature-content">
-                                            <div class="feature-title">Brand on Purpose</div>
-                                            <div class="feature-description">Leading podcast on purpose-driven business. Discussing how brands integrate social impact into core strategy and create shared value.</div>
-                                        </div>
+                                    <div class="podcast-card">
+                                        <div class="podcast-title">Brand on Purpose</div>
+                                        <div class="podcast-description">Leading podcast on purpose-driven business. Discussing how brands integrate social impact into core strategy and create shared value.</div>
+                                        <audio controls class="audio-player" preload="metadata">
+                                            <source src="audio/brand-on-purpose.mp3" type="audio/mpeg">
+                                            Your browser does not support the audio element.
+                                        </audio>
                                     </div>
-                                    <div class="feature-card">
-                                        <img src="images/p360-podcast.jpeg" alt="Purpose360" class="feature-image">
-                                        <div class="feature-content">
-                                            <div class="feature-title">Purpose360</div>
-                                            <div class="feature-description">360-degree perspectives on purpose and impact. Exploring stakeholder capitalism, ESG integration, and the future of purposeful organizations.</div>
-                                        </div>
+                                    <div class="podcast-card">
+                                        <div class="podcast-title">Purpose360</div>
+                                        <div class="podcast-description">360-degree perspectives on purpose and impact. Exploring stakeholder capitalism, ESG integration, and the future of purposeful organizations.</div>
+                                        <audio controls class="audio-player" preload="metadata">
+                                            <source src="audio/purpose360.mp3" type="audio/mpeg">
+                                            Your browser does not support the audio element.
+                                        </audio>
                                     </div>
-                                    <div class="feature-card">
-                                        <img src="images/pinc-podcast.webp" alt="Purpose Inc" class="feature-image">
-                                        <div class="feature-content">
-                                            <div class="feature-title">Purpose Inc</div>
-                                            <div class="feature-description">Purpose incorporation into business models. Building movements, scaling impact, and creating sustainable value for all stakeholders.</div>
-                                        </div>
+                                    <div class="podcast-card">
+                                        <div class="podcast-title">Purpose Inc</div>
+                                        <div class="podcast-description">Purpose incorporation into business models. Building movements, scaling impact, and creating sustainable value for all stakeholders.</div>
+                                        <audio controls class="audio-player" preload="metadata">
+                                            <source src="audio/purpose-inc.mp3" type="audio/mpeg">
+                                            Your browser does not support the audio element.
+                                        </audio>
                                     </div>
-                                    <div class="feature-card">
-                                        <img src="images/probono-podcast.webp" alt="Common Impact" class="feature-image">
-                                        <div class="feature-content">
-                                            <div class="feature-title">Common Impact</div>
-                                            <div class="feature-description">Collective impact and cross-sector collaboration. Partnerships, pro bono service, and building ecosystems for systemic change.</div>
-                                        </div>
+                                    <div class="podcast-card">
+                                        <div class="podcast-title">Common Impact</div>
+                                        <div class="podcast-description">Collective impact and cross-sector collaboration. Partnerships, pro bono service, and building ecosystems for systemic change.</div>
+                                        <audio controls class="audio-player" preload="metadata">
+                                            <source src="audio/common-impact.mp4" type="audio/mpeg">
+                                            Your browser does not support the audio element.
+                                        </audio>
                                     </div>
                                 </div>
                                 <div class="carousel-track">
-                                    <div class="feature-card">
-                                        <img src="images/bop-podcast.webp" alt="Podcast" class="feature-image">
-                                        <div class="feature-content">
-                                            <div class="feature-title">Brand on Purpose</div>
-                                            <div class="feature-description">Leading podcast on purpose-driven business. Discussing how brands integrate social impact into core strategy and create shared value.</div>
-                                        </div>
+                                    <div class="podcast-card">
+                                        <div class="podcast-title">Brand on Purpose</div>
+                                        <div class="podcast-description">Leading podcast on purpose-driven business. Discussing how brands integrate social impact into core strategy and create shared value.</div>
+                                        <audio controls class="audio-player" preload="metadata">
+                                            <source src="audio/brand-on-purpose.mp3" type="audio/mpeg">
+                                            Your browser does not support the audio element.
+                                        </audio>
                                     </div>
-                                    <div class="feature-card">
-                                        <img src="images/p360-podcast.jpeg" alt="Purpose360" class="feature-image">
-                                        <div class="feature-content">
-                                            <div class="feature-title">Purpose360</div>
-                                            <div class="feature-description">360-degree perspectives on purpose and impact. Exploring stakeholder capitalism, ESG integration, and the future of purposeful organizations.</div>
-                                        </div>
+                                    <div class="podcast-card">
+                                        <div class="podcast-title">Purpose360</div>
+                                        <div class="podcast-description">360-degree perspectives on purpose and impact. Exploring stakeholder capitalism, ESG integration, and the future of purposeful organizations.</div>
+                                        <audio controls class="audio-player" preload="metadata">
+                                            <source src="audio/purpose360.mp3" type="audio/mpeg">
+                                            Your browser does not support the audio element.
+                                        </audio>
                                     </div>
-                                    <div class="feature-card">
-                                        <img src="images/pinc-podcast.webp" alt="Purpose Inc" class="feature-image">
-                                        <div class="feature-content">
-                                            <div class="feature-title">Purpose Inc</div>
-                                            <div class="feature-description">Purpose incorporation into business models. Building movements, scaling impact, and creating sustainable value for all stakeholders.</div>
-                                        </div>
+                                    <div class="podcast-card">
+                                        <div class="podcast-title">Purpose Inc</div>
+                                        <div class="podcast-description">Purpose incorporation into business models. Building movements, scaling impact, and creating sustainable value for all stakeholders.</div>
+                                        <audio controls class="audio-player" preload="metadata">
+                                            <source src="audio/purpose-inc.mp3" type="audio/mpeg">
+                                            Your browser does not support the audio element.
+                                        </audio>
                                     </div>
-                                    <div class="feature-card">
-                                        <img src="images/probono-podcast.webp.jpg" alt="Common Impact" class="feature-image">
-                                        <div class="feature-content">
-                                            <div class="feature-title">Common Impact</div>
-                                            <div class="feature-description">Collective impact and cross-sector collaboration. Partnerships, pro bono service, and building ecosystems for systemic change.</div>
-                                        </div>
+                                    <div class="podcast-card">
+                                        <div class="podcast-title">Common Impact</div>
+                                        <div class="podcast-description">Collective impact and cross-sector collaboration. Partnerships, pro bono service, and building ecosystems for systemic change.</div>
+                                        <audio controls class="audio-player" preload="metadata">
+                                            <source src="audio/common-impact.mp3" type="audio/mpeg">
+                                            Your browser does not support the audio element.
+                                        </audio>
                                     </div>
                                 </div>
                             </div>
@@ -1714,64 +1743,120 @@
 
                     <div class="content-section">
                         <h2 class="section-title">Keynote Topics</h2>
-                        <div class="accordion">
-                            <div class="accordion-item">
-                                <button class="accordion-header">
-                                    <span>Purpose-Driven Leadership in the Stakeholder Capitalism Era</span>
-                                    <span class="accordion-icon">▼</span>
-                                </button>
-                                <div class="accordion-content">
-                                    <div class="accordion-body">
-                                        Leading with purpose in the era of stakeholder capitalism. Explore how purpose-driven organizations outperform peers, attract top talent, 
-                                        and build stronger brands while driving sustainable growth. Real-world frameworks from 26 years of experience scaling purposeful enterprises.
+                        <div class="carousel-container">
+                            <div class="carousel">
+                                <div class="carousel-track">
+                                    <div class="topic-card">
+                                        <div class="topic-title">Purpose-Driven Leadership</div>
+                                        <ul class="topic-list">
+                                            <li>Stakeholder capitalism era</li>
+                                            <li>Outperforming peer organizations</li>
+                                            <li>Attracting top talent globally</li>
+                                            <li>Building stronger brands</li>
+                                            <li>Driving sustainable growth</li>
+                                            <li>Real-world frameworks</li>
+                                        </ul>
+                                    </div>
+                                    <div class="topic-card">
+                                        <div class="topic-title">Corporate Social Impact</div>
+                                        <ul class="topic-list">
+                                            <li>Building at population scale</li>
+                                            <li>Mobilizing partnerships</li>
+                                            <li>Measuring outcomes</li>
+                                            <li>Creating lasting change</li>
+                                            <li>30M+ people reached</li>
+                                            <li>55 countries spanning</li>
+                                        </ul>
+                                    </div>
+                                    <div class="topic-card">
+                                        <div class="topic-title">AI for Social Good</div>
+                                        <ul class="topic-list">
+                                            <li>Technology as force for inclusion</li>
+                                            <li>Education & healthcare</li>
+                                            <li>Workforce development</li>
+                                            <li>Sustainable development goals</li>
+                                            <li>Digital platforms</li>
+                                            <li>Democratizing opportunity</li>
+                                        </ul>
+                                    </div>
+                                    <div class="topic-card">
+                                        <div class="topic-title">Future of Work</div>
+                                        <ul class="topic-list">
+                                            <li>Inclusive workplaces</li>
+                                            <li>Digital transformation</li>
+                                            <li>Building diverse teams</li>
+                                            <li>Fostering belonging</li>
+                                            <li>Scaling successfully</li>
+                                            <li>Global opportunities</li>
+                                        </ul>
+                                    </div>
+                                    <div class="topic-card">
+                                        <div class="topic-title">Sustainable Business</div>
+                                        <ul class="topic-list">
+                                            <li>Carbon Negative, Social Positive</li>
+                                            <li>Resilient business models</li>
+                                            <li>Regenerative approaches</li>
+                                            <li>Stakeholder value</li>
+                                            <li>Environmental action</li>
+                                            <li>Social challenges</li>
+                                        </ul>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="accordion-item">
-                                <button class="accordion-header">
-                                    <span>Corporate Social Impact at Population Scale</span>
-                                    <span class="accordion-icon">▼</span>
-                                </button>
-                                <div class="accordion-content">
-                                    <div class="accordion-body">
-                                        Building and scaling world-class social impact programs that reach 30M+ people across 55 countries. Learn strategies for mobilizing 188 partnerships, 
-                                        measuring outcomes, creating lasting change, and integrating impact across enterprise operations.
+                                <div class="carousel-track">
+                                    <div class="topic-card">
+                                        <div class="topic-title">Purpose-Driven Leadership</div>
+                                        <ul class="topic-list">
+                                            <li>Stakeholder capitalism era</li>
+                                            <li>Outperforming peer organizations</li>
+                                            <li>Attracting top talent globally</li>
+                                            <li>Building stronger brands</li>
+                                            <li>Driving sustainable growth</li>
+                                            <li>Real-world frameworks</li>
+                                        </ul>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <button class="accordion-header">
-                                    <span>AI for Social Good: Technology as a Force for Inclusion</span>
-                                    <span class="accordion-icon">▼</span>
-                                </button>
-                                <div class="accordion-content">
-                                    <div class="accordion-body">
-                                        Leveraging artificial intelligence for positive social change. Discover how AI can address global challenges in education, healthcare, 
-                                        workforce development, and sustainable development. Building digital platforms that democratize opportunity and advance equity.
+                                    <div class="topic-card">
+                                        <div class="topic-title">Corporate Social Impact</div>
+                                        <ul class="topic-list">
+                                            <li>Building at population scale</li>
+                                            <li>Mobilizing partnerships</li>
+                                            <li>Measuring outcomes</li>
+                                            <li>Creating lasting change</li>
+                                            <li>30M+ people reached</li>
+                                            <li>55 countries spanning</li>
+                                        </ul>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <button class="accordion-header">
-                                    <span>Future of Work & Building Inclusive Workforces</span>
-                                    <span class="accordion-icon">▼</span>
-                                </button>
-                                <div class="accordion-content">
-                                    <div class="accordion-body">
-                                        Creating inclusive workplaces in the digital transformation era. Strategies for scaling from 12K to 45K employees with 80% retention 
-                                        across 75+ nationalities. Building diverse teams, fostering belonging, and preparing workforces for emerging opportunities.
+                                    <div class="topic-card">
+                                        <div class="topic-title">AI for Social Good</div>
+                                        <ul class="topic-list">
+                                            <li>Technology as force for inclusion</li>
+                                            <li>Education & healthcare</li>
+                                            <li>Workforce development</li>
+                                            <li>Sustainable development goals</li>
+                                            <li>Digital platforms</li>
+                                            <li>Democratizing opportunity</li>
+                                        </ul>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <button class="accordion-header">
-                                    <span>Carbon Negative, Social Positive: Sustainable Business Models</span>
-                                    <span class="accordion-icon">▼</span>
-                                </button>
-                                <div class="accordion-content">
-                                    <div class="accordion-body">
-                                        Integrating sustainability into core business strategy. Learn how to build resilient, regenerative business models that create value 
-                                        for all stakeholders. Achieving 80% Scope 1 & 2 reductions against Net Zero SBTi targets while driving business growth.
+                                    <div class="topic-card">
+                                        <div class="topic-title">Future of Work</div>
+                                        <ul class="topic-list">
+                                            <li>Inclusive workplaces</li>
+                                            <li>Digital transformation</li>
+                                            <li>Building diverse teams</li>
+                                            <li>Fostering belonging</li>
+                                            <li>Scaling successfully</li>
+                                            <li>Global opportunities</li>
+                                        </ul>
+                                    </div>
+                                    <div class="topic-card">
+                                        <div class="topic-title">Sustainable Business</div>
+                                        <ul class="topic-list">
+                                            <li>Carbon Negative, Social Positive</li>
+                                            <li>Resilient business models</li>
+                                            <li>Regenerative approaches</li>
+                                            <li>Stakeholder value</li>
+                                            <li>Environmental action</li>
+                                            <li>Social challenges</li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -1808,12 +1893,12 @@
                     <div class="content-section">
                         <h2 class="section-title">Building Teams Across Cultures</h2>
                         <div class="image-gallery">
-                            <img src="images/team-businesssolves.jpg" alt="Common Purpose" class="gallery-image">
-                            <img src="images/sitevisit-tsf.jpg" alt="Grassroots at Heart" class="gallery-image">
-                            <img src="images/team-cap.jpg" alt="Asia for Asia" class="gallery-image">
-                            <img src="images/team-LC2.jpg" alt="Leadership Circle" class="gallery-image">
-                            <img src="images/team-india.jpg" alt="Bonding over food" class="gallery-image">
-                            <img src="images/team-india2.jpg" alt="Those who power us" class="gallery-image">
+                            <img src="images/team-collaboration.jpg" alt="Team collaboration" class="gallery-image">
+                            <img src="images/community-india.jpg" alt="Community engagement in India" class="gallery-image">
+                            <img src="images/women-entrepreneurship.jpg" alt="Women's entrepreneurship program" class="gallery-image">
+                            <img src="images/youth-movement.jpg" alt="Youth skills development" class="gallery-image">
+                            <img src="images/speaking-panel.jpg" alt="Panel discussion" class="gallery-image">
+                            <img src="images/field-engagement.jpg" alt="Field engagement" class="gallery-image">
                         </div>
                     </div>
 
@@ -1920,10 +2005,12 @@
             </div>
             <div class="footer-section">
                 <h3>Connect</h3>
-                <p><a href="mailto:info@balajiganapathy.com">info@balajiganapathy.com</a></p>
+                <p><a href="mailto:purposeisthenewtech@gmail.com">purposeisthenewtech@gmail.com</a></p>
                 <p>New York Metropolitan Area</p>
                 <div class="social-links">
                     <a href="https://www.linkedin.com/in/balajiganapathy" class="social-link" target="_blank" rel="noopener">in</a>
+                    <a href="https://twitter.com" class="social-link" target="_blank" rel="noopener">𝕏</a>
+                    <a href="https://medium.com" class="social-link" target="_blank" rel="noopener">M</a>
                 </div>
             </div>
             <div class="footer-section">
@@ -1961,6 +2048,12 @@
             
             indicatorDots.forEach((dot, i) => {
                 dot.classList.toggle('active', parseInt(dot.dataset.persona) === index);
+            });
+            
+            // Reset all videos when switching personas
+            document.querySelectorAll('video').forEach(video => {
+                video.currentTime = 0;
+                video.pause();
             });
             
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -2019,18 +2112,26 @@
         
         mobileMenuClose.addEventListener('click', closeMobileMenu);
         
-        document.querySelectorAll('.accordion-header').forEach(header => {
-            header.addEventListener('click', () => {
-                const item = header.parentElement;
-                const wasActive = item.classList.contains('active');
-                
-                document.querySelectorAll('.accordion-item').forEach(i => {
-                    i.classList.remove('active');
-                });
-                
-                if (!wasActive) {
-                    item.classList.add('active');
-                }
+        // Fix mobile video glitching
+        document.querySelectorAll('.video-wrapper video').forEach(video => {
+            video.addEventListener('play', () => {
+                video.style.display = 'block';
+            });
+            video.addEventListener('pause', () => {
+                video.style.display = 'block';
+            });
+            // Reset video on page unload/reload
+            window.addEventListener('beforeunload', () => {
+                video.currentTime = 0;
+                video.pause();
+            });
+        });
+        
+        // Reset all videos on page load
+        window.addEventListener('load', () => {
+            document.querySelectorAll('video').forEach(video => {
+                video.currentTime = 0;
+                video.pause();
             });
         });
         
