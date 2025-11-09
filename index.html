@@ -362,8 +362,8 @@
         
         /* LOGO BAR */
         .logo-bar {
-            margin: 3rem auto;
-            padding: 3rem 0;
+            margin: -1rem auto 3rem auto;
+            padding: 2.5rem 0 2rem 0;
             background: var(--bg-gray);
             border-radius: 12px;
         }
@@ -2423,6 +2423,172 @@
             contactForm.reset();
             modalOverlay.classList.remove('active');
         });
+    
+
+        // ========================================
+        // DYNAMIC NEWS FETCHING WITH MICROLINK API
+        // ========================================
+
+        // Easy-to-update list of news article URLs
+        const NEWS_URLS = [
+            'https://3blmedia.com/news/social-impact-heroes-why-how-balaji-ganapathy-tcs',
+            'https://www.weforum.org/stories/2021/01/how-companies-can-make-noise-during-the-skilling-revolution',
+            'https://www.fortuneindia.com/long-reads/philanthropys-great-convergence/113985',
+            'https://education.economictimes.indiatimes.com/news/tcs-groundbreaking-approach-to-ending-poverty'
+        ];
+
+        // Function to fetch article metadata using Microlink API
+        async function fetchArticleData(url) {
+            try {
+                const apiUrl = `https://api.microlink.io?url=${encodeURIComponent(url)}`;
+                const response = await fetch(apiUrl);
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+
+                if (data.status === 'success' && data.data) {
+                    return {
+                        url: url,
+                        title: data.data.title || 'News Article',
+                        description: data.data.description || '',
+                        image: data.data.image?.url || 'images/news-placeholder.jpg',
+                        domain: data.data.publisher || new URL(url).hostname.replace('www.', ''),
+                        date: data.data.date || ''
+                    };
+                }
+            } catch (error) {
+                console.error(`Error fetching ${url}:`, error);
+            }
+
+            // Fallback if API fails
+            try {
+                const domain = new URL(url).hostname.replace('www.', '');
+                return {
+                    url: url,
+                    title: 'Click to read article',
+                    description: '',
+                    image: 'images/news-placeholder.jpg',
+                    domain: domain,
+                    date: ''
+                };
+            } catch (e) {
+                return null;
+            }
+        }
+
+        // Function to create a news card element
+        function createNewsCard(article) {
+            if (!article) return null;
+
+            const card = document.createElement('a');
+            card.href = article.url;
+            card.className = 'news-card';
+            card.target = '_blank';
+            card.rel = 'noopener noreferrer';
+
+            // Format date if available
+            let dateDisplay = '2024';
+            if (article.date) {
+                try {
+                    const articleDate = new Date(article.date);
+                    if (!isNaN(articleDate.getTime())) {
+                        dateDisplay = articleDate.toLocaleDateString('en-US', { 
+                            month: 'short', 
+                            year: 'numeric' 
+                        });
+                    }
+                } catch (e) {
+                    dateDisplay = '2024';
+                }
+            }
+
+            // Truncate title if too long
+            const displayTitle = article.title.length > 100 
+                ? article.title.substring(0, 97) + '...' 
+                : article.title;
+
+            card.innerHTML = `
+                <img src="${article.image}" 
+                     alt="${article.title}" 
+                     class="news-image" 
+                     onerror="this.src='images/news-placeholder.jpg'"
+                     loading="lazy">
+                <div class="news-content">
+                    <div class="news-source">${article.domain}</div>
+                    <div class="news-headline">${displayTitle}</div>
+                    <div class="news-date">${dateDisplay}</div>
+                </div>
+            `;
+
+            return card;
+        }
+
+        // Function to populate news carousel
+        async function populateNewsCarousel() {
+            const track1 = document.getElementById('newsCarouselTrack');
+            const track2 = document.getElementById('newsCarouselTrack2');
+
+            // Check if news tracks exist (only on Speaker page)
+            if (!track1 || !track2) {
+                return; // Not on Speaker page, exit gracefully
+            }
+
+            // Show loading state
+            track1.innerHTML = '<div style="padding: 2rem; color: var(--text-dark); font-size: 1rem;">Loading news articles...</div>';
+            track2.innerHTML = '';
+
+            try {
+                // Fetch all article data with timeout
+                const fetchPromises = NEWS_URLS.map(url => 
+                    Promise.race([
+                        fetchArticleData(url),
+                        new Promise((_, reject) => 
+                            setTimeout(() => reject(new Error('Timeout')), 10000)
+                        )
+                    ])
+                );
+
+                const articles = await Promise.all(fetchPromises);
+
+                // Filter out null articles
+                const validArticles = articles.filter(article => article !== null);
+
+                if (validArticles.length === 0) {
+                    throw new Error('No articles loaded');
+                }
+
+                // Clear tracks
+                track1.innerHTML = '';
+                track2.innerHTML = '';
+
+                // Add cards to both tracks for seamless loop
+                validArticles.forEach(article => {
+                    const card1 = createNewsCard(article);
+                    const card2 = createNewsCard(article);
+                    if (card1) track1.appendChild(card1);
+                    if (card2) track2.appendChild(card2);
+                });
+
+                console.log(`✓ Successfully loaded ${validArticles.length} news articles`);
+
+            } catch (error) {
+                console.error('Error populating news carousel:', error);
+                track1.innerHTML = '<div style="padding: 2rem; color: var(--text-dark); font-size: 1rem;">News articles temporarily unavailable. Please check back soon.</div>';
+                track2.innerHTML = '';
+            }
+        }
+
+        // Initialize news carousel when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', populateNewsCarousel);
+        } else {
+            // DOM already loaded
+            populateNewsCarousel();
+        }
+
     </script>
 </body>
 </html>
