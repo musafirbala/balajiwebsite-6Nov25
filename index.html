@@ -36,7 +36,13 @@
       "url": "https://balajiganapathy.com",
       "sameAs": [
         "https://www.linkedin.com/in/balajiganapathy",
-        "https://twitter.com/musafirbala"
+        "https://twitter.com/balajiganapathy"
+      ],
+      "affiliation": [
+        {"@type": "Organization", "name": "World Economic Forum"},
+        {"@type": "Organization", "name": "US Chamber of Commerce Foundation"},
+        {"@type": "Organization", "name": "CECP"},
+        {"@type": "Organization", "name": "Tata Consultancy Services"}
       ]
     }
     </script>
@@ -354,6 +360,76 @@
             background: var(--primary-light);
         }
         
+        /* LOGO BAR */
+        .logo-bar {
+            margin: 3rem auto;
+            padding: 3rem 0;
+            background: var(--bg-gray);
+            border-radius: 12px;
+        }
+        
+        body.dark-mode .logo-bar {
+            background: var(--dm-card);
+        }
+        
+        .logo-bar-title {
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        body.dark-mode .logo-bar-title {
+            color: var(--dm-text);
+        }
+        
+        .logo-bar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 3rem 2rem;
+            align-items: center;
+            justify-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .logo-bar-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            transition: all var(--transition-speed);
+            width: 100%;
+            height: 80px;
+        }
+        
+        .logo-bar-item img {
+            max-width: 100%;
+            max-height: 60px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            transition: all var(--transition-speed);
+            filter: grayscale(100%) opacity(0.6);
+        }
+        
+        body.dark-mode .logo-bar-item img {
+            filter: brightness(0) invert(1) opacity(0.8);
+        }
+        
+        .logo-bar-item:hover img {
+            filter: grayscale(0%) opacity(1);
+            transform: scale(1.05);
+        }
+        
+        body.dark-mode .logo-bar-item:hover img {
+            filter: grayscale(0%) brightness(1) invert(0) opacity(1);
+        }
+        
         .content-section {
             margin-bottom: 4rem;
         }
@@ -377,6 +453,51 @@
             margin: 0 0 3rem 0;
             text-align: left;
             padding: 0;
+        }
+        
+        /* VIDEO GRID - SUPPORT 3 VIDEOS */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem auto;
+            max-width: 1200px;
+        }
+        
+        .video-container {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            background: #000;
+        }
+        
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background: #000;
+        }
+        
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        
+        .video-title {
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-top: 1rem;
+            color: var(--text-dark);
+        }
+        
+        body.dark-mode .video-title {
+            color: var(--dm-text);
         }
         
         /* UPGRADED FEATURE CAROUSEL */
@@ -469,53 +590,66 @@
             color: #999;
         }
         
-        /* PUBLIC ENGAGEMENT - UPDATED */
-        .org-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            max-width: 1000px;
-            margin: 0 0 3rem 0;
-        }
-        
-        .org-name {
-            font-size: 0.85rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: var(--primary);
-            line-height: 1.4;
-            flex: 0 1 auto;
-        }
-        
-        body.dark-mode .org-name {
-            color: var(--accent-teal);
-        }
-        
-        /* VIDEO CONTAINER - RESPONSIVE */
-        .video-container {
-            margin: 3rem auto;
+        /* NEWS CARD for news carousel */
+        .news-card {
+            min-width: 380px;
+            max-width: 380px;
+            flex: 0 0 auto;
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            max-width: 900px;
-        }
-        
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            background: #000;
-        }
-        
-        .video-wrapper video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            transition: all var(--transition-speed);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+            text-decoration: none;
             display: block;
+        }
+        
+        body.dark-mode .news-card {
+            background: var(--dm-card);
+            border-color: var(--dm-border);
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .news-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: var(--bg-gray);
+        }
+        
+        .news-content {
+            padding: 1.5rem;
+        }
+        
+        .news-source {
+            font-size: 0.85rem;
+            color: var(--accent-teal);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+        
+        .news-headline {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+        
+        body.dark-mode .news-headline {
+            color: var(--dm-text);
+        }
+        
+        .news-date {
+            font-size: 0.85rem;
+            color: #999;
         }
         
         /* PODCAST AUDIO CARDS */
@@ -539,6 +673,14 @@
         .podcast-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .podcast-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
         }
         
         .podcast-title {
@@ -645,76 +787,6 @@
         .gallery-image:hover {
             transform: scale(1.05);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        .accordion {
-            margin: 2rem 0;
-        }
-        
-        .accordion-item {
-            margin-bottom: 1rem;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        
-        body.dark-mode .accordion-item {
-            border-color: var(--dm-border);
-        }
-        
-        .accordion-header {
-            background: var(--bg-gray);
-            padding: 1.5rem;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: all var(--transition-speed);
-            border: none;
-            width: 100%;
-            text-align: left;
-            font-size: 1.1rem;
-            font-weight: 600;
-            font-family: inherit;
-        }
-        
-        body.dark-mode .accordion-header {
-            background: var(--dm-card);
-            color: var(--dm-text);
-        }
-        
-        .accordion-header:hover {
-            background: var(--accent-teal);
-            color: var(--text-light);
-        }
-        
-        .accordion-icon {
-            font-size: 1.5rem;
-            transition: transform var(--transition-speed);
-        }
-        
-        .accordion-item.active .accordion-icon {
-            transform: rotate(180deg);
-        }
-        
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height var(--transition-speed);
-            background: var(--bg-light);
-        }
-        
-        body.dark-mode .accordion-content {
-            background: var(--dm-bg);
-        }
-        
-        .accordion-item.active .accordion-content {
-            max-height: 500px;
-        }
-        
-        .accordion-body {
-            padding: 1.5rem;
-            line-height: 1.8;
         }
         
         .modal-overlay {
@@ -917,18 +989,22 @@
             }
             
             .feature-card,
+            .news-card,
             .podcast-card,
             .topic-card {
                 min-width: calc(100vw - 4rem);
                 max-width: calc(100vw - 4rem);
             }
             
-            .section-title {
-                text-align: left;
+            .logo-bar-grid {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                gap: 2rem 1rem;
+                padding: 0 1rem;
             }
             
-            .org-list {
-                gap: 1rem;
+            .video-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
             }
         }
         
@@ -1044,6 +1120,37 @@
                         </div>
                     </div>
 
+                    <!-- LOGO BAR: Partners in Purpose -->
+                    <div class="logo-bar">
+                        <h3 class="logo-bar-title">Partners in Purpose</h3>
+                        <div class="logo-bar-grid">
+                            <div class="logo-bar-item">
+                                <img src="logos/tata.svg" alt="Tata Group">
+                            </div>
+                            <div class="logo-bar-item">
+                                <img src="logos/wef.svg" alt="World Economic Forum">
+                            </div>
+                            <div class="logo-bar-item">
+                                <img src="logos/un.svg" alt="United Nations">
+                            </div>
+                            <div class="logo-bar-item">
+                                <img src="logos/usccf.svg" alt="US Chamber of Commerce Foundation">
+                            </div>
+                            <div class="logo-bar-item">
+                                <img src="logos/whitehouse.svg" alt="US White House">
+                            </div>
+                            <div class="logo-bar-item">
+                                <img src="logos/gov-india.svg" alt="Government of India">
+                            </div>
+                            <div class="logo-bar-item">
+                                <img src="logos/cecp.svg" alt="CECP">
+                            </div>
+                            <div class="logo-bar-item">
+                                <img src="logos/hkjc.svg" alt="Hong Kong Jockey Club Charities Trust">
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="content-section">
                         <p class="section-description">
                             <strong>Balaji is a C-level executive with over 26 years of U.S. and global experience, building purposeful organizations and stewarding inclusive growth.</strong>
@@ -1058,41 +1165,38 @@
                         </p>
                     </div>
 
-                    <!-- PUBLIC ENGAGEMENT - UPDATED -->
-                    <div class="content-section">
-                        <h2 class="section-title">Public Engagement</h2>
-                        <div class="org-list">
-                            <div class="org-name">World Economic Forum</div>
-                            <div class="org-name">US Chamber Foundation</div>
-                            <div class="org-name">United Nations</div>
-                            <div class="org-name">CECP</div>
-                            <div class="org-name">White House</div>
-                            <div class="org-name">Government of India</div>
-                            <div class="org-name">Stanford</div>
-                            <div class="org-name">Harvard</div>
-                            <div class="org-name">Wharton</div>
-                            <div class="org-name">NYU</div>
-                            <div class="org-name">Duke University</div>
-                            <div class="org-name">SXSW</div>
-                            <div class="org-name">AVPN</div>
-                            <div class="org-name">HKJC Institute</div>
-                        </div>
-                    </div>
-
-                    <!-- VIDEO - RESPONSIVE -->
+                    <!-- 3 VIDEOS GRID -->
                     <div class="content-section">
                         <h2 class="section-title">Purpose in Action</h2>
-                        <div class="video-container">
-                            <div class="video-wrapper">
-                                <video controls preload="none">
-                                    <source src="videos/Balaji-Journey.mp4" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
+                        <div class="video-grid">
+                            <div class="video-container">
+                                <div class="video-wrapper">
+                                    <video controls preload="none">
+                                        <source src="videos/purpose-tech.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="video-container">
+                                <div class="video-wrapper">
+                                    <video controls preload="none">
+                                        <source src="videos/Dream_ AI_for_Impact.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="video-container">
+                                <div class="video-wrapper">
+                                    <video controls preload="none">
+                                        <source src="videos/Data--best-friend.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- FEATURED WORK -->
+                    <!-- REST OF LEADER CONTENT (keeping from index-12.html) -->
                     <div class="content-section">
                         <h2 class="section-title">Featured Work</h2>
                         <div class="carousel-container">
@@ -1120,7 +1224,7 @@
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/laas-beneficiary.jpg" alt="Literacy to Livelihood" class="feature-image">
+                                        <img src="images/lass-workshop.jpg" alt="Literacy to Livelihood" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">Literacy to Livelihood</div>
                                             <div class="feature-description">3 million marginalized individuals across 10 states. Integrated programs combining basic literacy, digital skills, and vocational training for economic mobility.</div>
@@ -1150,7 +1254,7 @@
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/laas-beneficiary.jpg" alt="Literacy to Livelihood" class="feature-image">
+                                        <img src="images/lass-workshop.jpg" alt="Literacy to Livelihood" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">Literacy to Livelihood</div>
                                             <div class="feature-description">3 million marginalized individuals across 10 states. Integrated programs combining basic literacy, digital skills, and vocational training for economic mobility.</div>
@@ -1161,7 +1265,6 @@
                         </div>
                     </div>
 
-                    <!-- PURPOSE ECOSYSTEM -->
                     <div class="content-section">
                         <h2 class="section-title">Purpose Ecosystem</h2>
                         <div class="carousel-container">
@@ -1230,7 +1333,6 @@
                         </div>
                     </div>
 
-                    <!-- STRATEGIC PARTNERSHIPS -->
                     <div class="content-section">
                         <h2 class="section-title">Strategic Partnerships</h2>
                         <div class="carousel-container">
@@ -1299,7 +1401,6 @@
                         </div>
                     </div>
 
-                    <!-- CROSS-DOMAIN EXPERTISE -->
                     <div class="content-section">
                         <h2 class="section-title">Cross-Domain Expertise</h2>
                         <div class="carousel-container">
@@ -1382,6 +1483,37 @@
                         </div>
                     </div>
 
+                    <!-- LOGO BAR: Trusted by -->
+                    <div class="logo-bar">
+                        <h3 class="logo-bar-title">Trusted by</h3>
+                        <div class="logo-bar-grid">
+                            <div class="logo-bar-item">
+                                <img src="logos/wef.svg" alt="World Economic Forum">
+                            </div>
+                            <div class="logo-bar-item">
+                                <img src="logos/usccf.svg" alt="US Chamber of Commerce Foundation">
+                            </div>
+                            <div class="logo-bar-item">
+                                <img src="logos/cecp.svg" alt="CECP">
+                            </div>
+                            <div class="logo-bar-item">
+                                <img src="logos/iop.svg" alt="Institute of Philanthropy">
+                            </div>
+                            <div class="logo-bar-item">
+                                <img src="logos/nudge.svg" alt="The/Nudge">
+                            </div>
+                            <div class="logo-bar-item">
+                                <img src="logos/wbc.svg" alt="Women Business Collaborative">
+                            </div>
+                            <div class="logo-bar-item">
+                                <img src="logos/mwm.svg" alt="Million Women Mentors">
+                            </div>
+                            <div class="logo-bar-item">
+                                <img src="logos/npower.svg" alt="NPower">
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="content-section">
                         <p class="section-description">
                             <strong>Balaji has advised CXOs and Fortune 500 companies, supporting over $30 billion digital transformation deals, and leading 200+ complex, global change management efforts and M&As.</strong>
@@ -1397,18 +1529,38 @@
                         </p>
                     </div>
 
+                    <!-- 3 VIDEOS GRID -->
                     <div class="content-section">
                         <h2 class="section-title">Advisory in Action</h2>
-                        <div class="video-container">
-                            <div class="video-wrapper">
-                                <video controls preload="none">
-                                    <source src="videos/Big-Bets-Business-Solves.mp4" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
+                        <div class="video-grid">
+                            <div class="video-container">
+                                <div class="video-wrapper">
+                                    <video controls preload="none">
+                                        <source src="videos/advisory-highlights.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="video-container">
+                                <div class="video-wrapper">
+                                    <video controls preload="none">
+                                        <source src="videos/AI_Uplevel.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="video-container">
+                                <div class="video-wrapper">
+                                    <video controls preload="none">
+                                        <source src="videos/Balaji-Journey-Purpose Ecosystem.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
                             </div>
                         </div>
                     </div>
 
+                    <!-- REST OF ADVISOR CONTENT -->
                     <div class="content-section">
                         <h2 class="section-title">Strategic Advisory</h2>
                         <div class="carousel-container">
@@ -1459,7 +1611,7 @@
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/speak-gsts.jpg.jpg" alt="Board Governance" class="feature-image">
+                                        <img src="images/speak-gsts.jpg" alt="Board Governance" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">Board Governance & Leadership</div>
                                             <div class="feature-description">Executive engagement, board strategy, and organizational transformation. Advising C-suite and boards on purpose integration and impact acceleration.</div>
@@ -1587,6 +1739,43 @@
                         </div>
                     </div>
 
+                    <!-- LOGO BAR: As featured in -->
+                    <div class="logo-bar">
+                        <h3 class="logo-bar-title">As featured in</h3>
+                        <div class="logo-bar-grid">
+                            <div class="logo-bar-item">
+                                <img src="logos/harvard.svg" alt="Harvard">
+                            </div>
+                            <div class="logo-bar-item">
+                                <img src="logos/mit.svg" alt="MIT">
+                            </div>
+                            <div class="logo-bar-item">
+                                <img src="logos/stanford.svg" alt="Stanford">
+                            </div>
+                            <div class="logo-bar-item">
+                                <img src="logos/duke.svg" alt="Duke University">
+                            </div>
+                            <div class="logo-bar-item">
+                                <img src="logos/sxsw.svg" alt="SXSW">
+                            </div>
+                            <div class="logo-bar-item">
+                                <img src="logos/avpn.svg" alt="AVPN">
+                            </div>
+                            <div class="logo-bar-item">
+                                <img src="logos/forbes.svg" alt="Forbes">
+                            </div>
+                            <div class="logo-bar-item">
+                                <img src="logos/fortune.svg" alt="Fortune">
+                            </div>
+                            <div class="logo-bar-item">
+                                <img src="logos/yahoo-finance.svg" alt="Yahoo Finance">
+                            </div>
+                            <div class="logo-bar-item">
+                                <img src="logos/economic-times.svg" alt="Economic Times">
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="content-section">
                         <p class="section-description">
                             <strong>Balaji is a sought-after keynote speaker inspiring audiences worldwide on purpose-driven leadership, AI for social good, and the future of work.</strong>
@@ -1597,6 +1786,71 @@
                         </p>
                     </div>
 
+                    <!-- IN THE NEWS CAROUSEL -->
+                    <div class="content-section">
+                        <h2 class="section-title">In the News</h2>
+                        <div class="carousel-container">
+                            <div class="carousel">
+                                <div class="carousel-track" id="newsCarouselTrack">
+                                    <!-- News items will be dynamically inserted here -->
+                                    <!-- Placeholder news cards (you'll replace with actual URLs) -->
+                                    <a href="#" class="news-card" target="_blank" rel="noopener">
+                                        <img src="images/news-placeholder.jpg" alt="News" class="news-image">
+                                        <div class="news-content">
+                                            <div class="news-source">Forbes</div>
+                                            <div class="news-headline">Placeholder: Add your news article URL</div>
+                                            <div class="news-date">2024</div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="news-card" target="_blank" rel="noopener">
+                                        <img src="images/news-placeholder.jpg" alt="News" class="news-image">
+                                        <div class="news-content">
+                                            <div class="news-source">Fortune</div>
+                                            <div class="news-headline">Placeholder: Add your news article URL</div>
+                                            <div class="news-date">2024</div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="news-card" target="_blank" rel="noopener">
+                                        <img src="images/news-placeholder.jpg" alt="News" class="news-image">
+                                        <div class="news-content">
+                                            <div class="news-source">Economic Times</div>
+                                            <div class="news-headline">Placeholder: Add your news article URL</div>
+                                            <div class="news-date">2024</div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="carousel-track" id="newsCarouselTrack2">
+                                    <!-- Duplicate for seamless loop -->
+                                    <a href="#" class="news-card" target="_blank" rel="noopener">
+                                        <img src="images/news-placeholder.jpg" alt="News" class="news-image">
+                                        <div class="news-content">
+                                            <div class="news-source">Forbes</div>
+                                            <div class="news-headline">Placeholder: Add your news article URL</div>
+                                            <div class="news-date">2024</div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="news-card" target="_blank" rel="noopener">
+                                        <img src="images/news-placeholder.jpg" alt="News" class="news-image">
+                                        <div class="news-content">
+                                            <div class="news-source">Fortune</div>
+                                            <div class="news-headline">Placeholder: Add your news article URL</div>
+                                            <div class="news-date">2024</div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="news-card" target="_blank" rel="noopener">
+                                        <img src="images/news-placeholder.jpg" alt="News" class="news-image">
+                                        <div class="news-content">
+                                            <div class="news-source">Economic Times</div>
+                                            <div class="news-headline">Placeholder: Add your news article URL</div>
+                                            <div class="news-date">2024</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- REST OF SPEAKER CONTENT -->
                     <div class="content-section">
                         <h2 class="section-title">Speaking Highlights</h2>
                         <div class="carousel-container">
@@ -1671,7 +1925,7 @@
                             <div class="carousel">
                                 <div class="carousel-track">
                                     <div class="podcast-card">
-                                        <img src="images/bop-podcast.webp" alt="Brand on Purpose" class="podcast-image" style="width:100%;height:180px;object-fit:cover;border-radius:8px;margin-bottom:1rem;">
+                                        <img src="images/bop-podcast.webp" alt="Brand on Purpose" class="podcast-image">
                                         <div class="podcast-title">Brand on Purpose</div>
                                         <div class="podcast-description">Leading podcast on purpose-driven business. Discussing how brands integrate social impact into core strategy and create shared value.</div>
                                         <audio controls class="audio-player" preload="metadata">
@@ -1680,7 +1934,7 @@
                                         </audio>
                                     </div>
                                     <div class="podcast-card">
-                                        <img src="images/p360-podcast.jpeg" alt="Brand on Purpose" class="podcast-image" style="width:100%;height:180px;object-fit:cover;border-radius:8px;margin-bottom:1rem;">
+                                        <img src="images/p360-podcast.jpeg" alt="Purpose360" class="podcast-image">
                                         <div class="podcast-title">Purpose360</div>
                                         <div class="podcast-description">360-degree perspectives on purpose and impact. Exploring stakeholder capitalism, ESG integration, and the future of purposeful organizations.</div>
                                         <audio controls class="audio-player" preload="metadata">
@@ -1689,7 +1943,7 @@
                                         </audio>
                                     </div>
                                     <div class="podcast-card">
-                                        <img src="images/pinc-podcast.webp" alt="Brand on Purpose" class="podcast-image" style="width:100%;height:180px;object-fit:cover;border-radius:8px;margin-bottom:1rem;">
+                                        <img src="images/pinc-podcast.webp" alt="Purpose Inc" class="podcast-image">
                                         <div class="podcast-title">Purpose Inc</div>
                                         <div class="podcast-description">Purpose incorporation into business models. Building movements, scaling impact, and creating sustainable value for all stakeholders.</div>
                                         <audio controls class="audio-player" preload="metadata">
@@ -1698,7 +1952,7 @@
                                         </audio>
                                     </div>
                                     <div class="podcast-card">
-                                        <img src="images/probono-podcast.webp" alt="Brand on Purpose" class="podcast-image" style="width:100%;height:180px;object-fit:cover;border-radius:8px;margin-bottom:1rem;">
+                                        <img src="images/probono-podcast.webp" alt="Common Impact" class="podcast-image">
                                         <div class="podcast-title">Common Impact</div>
                                         <div class="podcast-description">Collective impact and cross-sector collaboration. Partnerships, pro bono service, and building ecosystems for systemic change.</div>
                                         <audio controls class="audio-player" preload="metadata">
@@ -1709,7 +1963,7 @@
                                 </div>
                                 <div class="carousel-track">
                                     <div class="podcast-card">
-                                        <img src="images/bop-podcast.webp" alt="Brand on Purpose" class="podcast-image" style="width:100%;height:180px;object-fit:cover;border-radius:8px;margin-bottom:1rem;">
+                                        <img src="images/bop-podcast.webp" alt="Brand on Purpose" class="podcast-image">
                                         <div class="podcast-title">Brand on Purpose</div>
                                         <div class="podcast-description">Leading podcast on purpose-driven business. Discussing how brands integrate social impact into core strategy and create shared value.</div>
                                         <audio controls class="audio-player" preload="metadata">
@@ -1718,8 +1972,8 @@
                                         </audio>
                                     </div>
                                     <div class="podcast-card">
+                                        <img src="images/p360-podcast.jpeg" alt="Purpose360" class="podcast-image">
                                         <div class="podcast-title">Purpose360</div>
-                                        <img src="images/p360-podcast.jpeg" alt="Brand on Purpose" class="podcast-image" style="width:100%;height:180px;object-fit:cover;border-radius:8px;margin-bottom:1rem;">
                                         <div class="podcast-description">360-degree perspectives on purpose and impact. Exploring stakeholder capitalism, ESG integration, and the future of purposeful organizations.</div>
                                         <audio controls class="audio-player" preload="metadata">
                                             <source src="audio/purpose360.mp3" type="audio/mpeg">
@@ -1727,8 +1981,8 @@
                                         </audio>
                                     </div>
                                     <div class="podcast-card">
+                                        <img src="images/pinc-podcast.webp" alt="Purpose Inc" class="podcast-image">
                                         <div class="podcast-title">Purpose Inc</div>
-                                         <img src="images/pinc-podcast.webp" alt="Brand on Purpose" class="podcast-image" style="width:100%;height:180px;object-fit:cover;border-radius:8px;margin-bottom:1rem;">
                                         <div class="podcast-description">Purpose incorporation into business models. Building movements, scaling impact, and creating sustainable value for all stakeholders.</div>
                                         <audio controls class="audio-player" preload="metadata">
                                             <source src="audio/purpose-inc.mp3" type="audio/mpeg">
@@ -1736,8 +1990,8 @@
                                         </audio>
                                     </div>
                                     <div class="podcast-card">
+                                        <img src="images/probono-podcast.webp" alt="Common Impact" class="podcast-image">
                                         <div class="podcast-title">Common Impact</div>
-                                         <img src="images/probono-podcast.webp" alt="Brand on Purpose" class="podcast-image" style="width:100%;height:180px;object-fit:cover;border-radius:8px;margin-bottom:1rem;">
                                         <div class="podcast-description">Collective impact and cross-sector collaboration. Partnerships, pro bono service, and building ecosystems for systemic change.</div>
                                         <audio controls class="audio-player" preload="metadata">
                                             <source src="audio/common-impact.mp3" type="audio/mpeg">
@@ -1923,21 +2177,21 @@
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/speaking-panel.jpg" alt="Team Architecture" class="feature-image">
+                                        <img src="images/team-collaboration.jpg" alt="Team Architecture" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">Team Architecture & Culture</div>
                                             <div class="feature-description">Building high-performing, diverse teams. Scaling from 12K to 45K with 80% retention. Creating cultures of innovation, inclusion, and continuous learning.</div>
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/team-collaboration.jpg" alt="Change Management" class="feature-image">
+                                        <img src="images/field-engagement.jpg" alt="Change Management" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">Change Management</div>
                                             <div class="feature-description">Leading 200+ complex transformations. Navigating M&A integration, digital transformation, and cultural change. Building resilience and adaptive capacity.</div>
                                         </div>
                                     </div>
                                     <div class="feature-card">
-                                        <img src="images/field-engagement.jpg" alt="Impact Strategy" class="feature-image">
+                                        <img src="images/youth-movement.jpg" alt="Impact Strategy" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">Impact Strategy & Execution</div>
                                             <div class="feature-description">Aligning purpose with business outcomes. Building impact programs at population scale. Measurement, partnerships, and sustainable value creation.</div>
@@ -1946,7 +2200,7 @@
                                 </div>
                                 <div class="carousel-track">
                                     <div class="feature-card">
-                                        <img src="images/youth-movement.jpg" alt="Executive Leadership" class="feature-image">
+                                        <img src="images/speaking-panel.jpg" alt="Executive Leadership" class="feature-image">
                                         <div class="feature-content">
                                             <div class="feature-title">Executive Leadership</div>
                                             <div class="feature-description">C-suite coaching on purpose-driven leadership, stakeholder management, and building organizations that balance profit with purpose. Strategic thinking for transformational impact.</div>
@@ -2013,10 +2267,12 @@
             </div>
             <div class="footer-section">
                 <h3>Connect</h3>
-                <p><a href="mailto:info@balajiganapathy.com">info@balajiganapathy.com</a></p>
-                <p>U.S, India, Asia</p>
+                <p><a href="mailto:purposeisthenewtech@gmail.com">purposeisthenewtech@gmail.com</a></p>
+                <p>New York Metropolitan Area</p>
                 <div class="social-links">
                     <a href="https://www.linkedin.com/in/balajiganapathy" class="social-link" target="_blank" rel="noopener">in</a>
+                    <a href="https://twitter.com" class="social-link" target="_blank" rel="noopener">𝕏</a>
+                    <a href="https://medium.com" class="social-link" target="_blank" rel="noopener">M</a>
                 </div>
             </div>
             <div class="footer-section">
@@ -2126,7 +2382,6 @@
             video.addEventListener('pause', () => {
                 video.style.display = 'block';
             });
-            // Reset video on page unload/reload
             window.addEventListener('beforeunload', () => {
                 video.currentTime = 0;
                 video.pause();
